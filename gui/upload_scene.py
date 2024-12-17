@@ -46,14 +46,14 @@ class UploadScene():
     def request_csv(self, event=None):
         file = filedialog.askopenfile(mode='r', initialdir=os.getcwd(), filetypes=[("CSV Files", "*.csv")])
         if file is None:
-            return # user canceled dialogue
-        
+            return  # user canceled dialogue
+
         try:
             rows = self.get_data_from_csv(file)
             entries = self.convert_row_to_entry(rows)
             for entry in entries:
                 self.database.add_entry(entry)
-            self.show_expenses_scene()
+            self.show_entries_scene()
         except Exception as error_message:
             tkinter.messagebox.showerror("Error", f"Failed to process csv file:\n{error_message}")
         finally:
@@ -91,7 +91,7 @@ class UploadScene():
                 raise ValueError(f"Amount is not in valid accounting format $(xxx.xx)\n{error_message}")
                 
             type = amount < 0 and "EXPENSE" or "REVENUE"
-            amount=abs(amount)
+            amount = abs(amount)
 
             entries.append(Entry(date, type, category, description, amount, location)) 
 

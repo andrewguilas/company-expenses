@@ -60,10 +60,11 @@ class EntriesScene:
 
         for entry in self.entries:
             if self.meets_search_query(entry, search_query):
-                self.tree.insert("", "end", values=(entry[1], entry[3], entry[4], entry[5], entry[6]))
+                date_str = entry.date.strftime("%m/%d/%Y")
+                self.tree.insert("", "end", values=(date_str, entry.category, entry.description, f"${entry.amount:,.2f}", entry.location))
 
-    def meets_search_query(self, entry, search_query):
-        return strip_string(search_query) in strip_string(str(entry))
+    def meets_search_query(self, entry_str, search_query):
+        return strip_string(search_query) in strip_string(str(entry_str))
 
     def filter_by_expenses(self):
         self.entries = self.database.get_expenses()

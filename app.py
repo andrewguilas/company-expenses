@@ -8,7 +8,6 @@ class App:
     def __init__(self):
         self.upload_scene = UploadScene()
         self.entries_scene = EntriesScene()
-
         self.database = Database()
 
     def start(self):
@@ -16,7 +15,7 @@ class App:
         self.root.title = "Company Expenses"
         self.root.geometry("1024x576")
 
-        if not os.path.exists(self.database.db_filename):
+        if len(self.database.get_expenses()) == 0:
             self.show_upload_scene()
         else:
             self.show_entries_scene()
