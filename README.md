@@ -6,3 +6,8 @@ This app will:
 3. At the branch level, display a list of expenses and revenue with a search, sort, and filter option *(due 12/17)*
 4. At the branch level, display a summary of expenses & revenue by month and category *(due 12/18)*
 5. At the corporate level, display a summary of expenses & revenue by month and category, by branch *(due 12/18)*
+
+Tools to use:
+- sqlite for database
+- tkinter for UI
+- unittest for sql unit tests
