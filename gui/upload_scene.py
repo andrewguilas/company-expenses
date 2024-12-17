@@ -53,6 +53,7 @@ class UploadScene():
             entries = self.convert_row_to_entry(rows)
             for entry in entries:
                 self.database.add_entry(entry)
+            self.show_expenses_scene()
         except Exception as error_message:
             tkinter.messagebox.showerror("Error", f"Failed to process csv file:\n{error_message}")
         finally:
@@ -96,3 +97,6 @@ class UploadScene():
 
         return entries
     
+    def show_expenses_scene(self):
+        self.hide()
+        self.app.show_expenses_scene()

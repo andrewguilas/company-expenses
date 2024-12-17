@@ -1,10 +1,21 @@
+import json
 import sqlite3
 
 class Database:
-    def __init__(self, db_name="database.db"):
-        self.connection = sqlite3.connect(db_name)
+    def __init__(self):
+        self.db_filename = self.load_config()
+        self.connection = sqlite3.connect(self.db_filename)
         self.cursor = self.connection.cursor()
         self.create_tables()
+
+    def load_config(self):
+        try:
+            with open("config.json", "r") as f:
+                config = json.load(f)
+                return config.get("db_filename", "database.db")
+        except FileNotFoundError:
+            print("Config file not found, using default settings.")
+            return "database.db"
 
     def create_tables(self):
         self.cursor.execute("""
