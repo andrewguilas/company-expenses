@@ -53,7 +53,6 @@ class UploadScene():
             entries = self.convert_row_to_entry(rows)
             for entry in entries:
                 self.database.add_entry(entry)
-            print(self.database.get_entries())
         except Exception as error_message:
             tkinter.messagebox.showerror("Error", f"Failed to process csv file:\n{error_message}")
         finally:
@@ -71,10 +70,10 @@ class UploadScene():
         entries = []
         for row in rows:
             date = row[0]
-            category = row[1]
-            description = row[2]
+            category = row[1].upper()
+            description = row[2].upper()
             amount = row[3]
-            location = row[4]
+            location = row[4].upper()
 
             missing_data = check_for_missing_data([date, category, description, amount, location])
             if missing_data:
@@ -91,6 +90,8 @@ class UploadScene():
                 raise ValueError(f"Amount is not in valid accounting format $(xxx.xx)\n{error_message}")
                 
             type = amount < 0 and "EXPENSE" or "REVENUE"
+            amount=abs(amount)
+
             entries.append(Entry(date, type, category, description, amount, location)) 
 
         return entries
