@@ -5,7 +5,7 @@ from managers.database import Database
 def strip_string(string):
     return string.lower().strip().replace(" ", "").replace("_", "")
 
-class ExpensesScene:
+class EntriesScene:
     def __init__(self):
         self.database = Database()
         self.entries = []

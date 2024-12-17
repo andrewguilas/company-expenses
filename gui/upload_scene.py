@@ -97,6 +97,6 @@ class UploadScene():
 
         return entries
     
-    def show_expenses_scene(self):
+    def show_entries_scene(self):
         self.hide()
-        self.app.show_expenses_scene()
+        self.app.show_entries_scene()

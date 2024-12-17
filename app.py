@@ -1,13 +1,13 @@
 import os
 from gui.upload_scene import UploadScene
-from gui.expenses_scene import ExpensesScene
+from gui.entries_scene import EntriesScene
 import tkinter
 from managers.database import Database
 
 class App:
     def __init__(self):
         self.upload_scene = UploadScene()
-        self.expenses_scene = ExpensesScene()
+        self.entries_scene = EntriesScene()
 
         self.database = Database()
 
@@ -19,15 +19,15 @@ class App:
         if not os.path.exists(self.database.db_filename):
             self.show_upload_scene()
         else:
-            self.show_expenses_scene()
+            self.show_entries_scene()
 
         self.root.mainloop()
 
     def show_upload_scene(self):
         self.upload_scene.show(self)
 
-    def show_expenses_scene(self):
-        self.expenses_scene.show(self)
+    def show_entries_scene(self):
+        self.entries_scene.show(self)
 
 if __name__ == "__main__":
     App().start()

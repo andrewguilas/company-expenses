@@ -1,5 +1,6 @@
 import json
 import sqlite3
+from entry import Entry  # Import the Entry class
 
 class Database:
     def __init__(self):
@@ -45,7 +46,9 @@ class Database:
                 self.cursor.execute("SELECT * FROM entries WHERE type='EXPENSE' AND location=?", (branch,))
             else:
                 self.cursor.execute("SELECT * FROM entries WHERE type='EXPENSE'")
-            return self.cursor.fetchall()
+            rows = self.cursor.fetchall()
+
+        return [Entry(row[1], row[2], row[3], row[4], row[5], row[6]) for row in rows]
 
     def get_revenues(self, branch=None):
         with self.connection:
@@ -53,7 +56,9 @@ class Database:
                 self.cursor.execute("SELECT * FROM entries WHERE type='REVENUE' AND location=?", (branch,))
             else:
                 self.cursor.execute("SELECT * FROM entries WHERE type='REVENUE'")
-            return self.cursor.fetchall()
+            rows = self.cursor.fetchall()
+
+        return [Entry(row[1], row[2], row[3], row[4], row[5], row[6]) for row in rows]
 
     def update_entry(self, entry):
         self.cursor.execute("""
@@ -72,4 +77,3 @@ class Database:
     def close(self):
         self.cursor.close()
         self.connection.close()
-
