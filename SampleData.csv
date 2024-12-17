@@ -1,0 +1,463 @@
+﻿Date,Category,Description, Amount ,Branch
+1/1/2023,sale,long_term_storage_dominik morey, $629.53 ,Charlottesville
+1/1/2023,storage_unit_rental,storage_unit_rental_9mo," $(8,100.00)",Charlottesville
+1/1/2023,sale,shipping_sibley arnaez, $968.38 ,Blacksburg
+1/1/2023,storage_unit_rental,storage_unit_rental_9mo," $(11,475.00)",Blacksburg
+1/1/2023,sale,summer_storage_aylmer morrish, $513.73 ,Williamsburg
+1/1/2023,storage_unit_rental,storage_unit_rental_9mo," $(2,700.00)",Williamsburg
+1/1/2023,storage_unit_rental,storage_unit_rental_9mo," $(1,350.00)",Richmond
+1/1/2023,storage_unit_rental,storage_unit_rental_9mo, $(675.00),Lexington
+1/3/2023,sale,summer_storage_curtis berzen, $305.54 ,Charlottesville
+1/3/2023,sale,summer_storage_ashia desesquelle, $800.75 ,Blacksburg
+1/3/2023,sale,shipping_krystle crennan, $538.21 ,Blacksburg
+1/3/2023,sale,summer_storage_hazel blunn, $824.26 ,Blacksburg
+1/3/2023,sale,summer_storage_montgomery de mattia, $778.66 ,Richmond
+1/4/2023,sale,summer_storage_gisella mattes, $736.07 ,Blacksburg
+1/4/2023,sale,long_term_storage_michaeline santarelli, $980.33 ,Blacksburg
+1/6/2023,sale,summer_storage_desiri rigts, $338.85 ,Blacksburg
+1/7/2023,sale,summer_storage_desirae hallatt, $482.13 ,Charlottesville
+1/7/2023,sale,summer_storage_lorettalorna feenan, $312.78 ,Williamsburg
+1/11/2023,sale,summer_storage_judith zanioletti, $925.57 ,Blacksburg
+1/11/2023,sale,summer_storage_rozelle tittletross, $720.94 ,Williamsburg
+1/12/2023,sale,long_term_storage_bobbie denley, $729.99 ,Blacksburg
+1/13/2023,sale,long_term_storage_wang habgood, $769.72 ,Charlottesville
+1/13/2023,sale,summer_storage_tucky lilliman, $963.66 ,Blacksburg
+1/13/2023,sale,summer_storage_delmore farmer, $816.04 ,Blacksburg
+1/13/2023,sale,long_term_storage_grantham mowen, $324.47 ,Williamsburg
+1/15/2023,sale,summer_storage_ker matyushenko, $828.32 ,Blacksburg
+1/18/2023,sale,long_term_storage_farrah allwright, $281.39 ,Lexington
+1/20/2023,sale,long_term_storage_shayne swatton, $302.29 ,Blacksburg
+1/21/2023,sale,summer_storage_claudell turmel, $698.34 ,Blacksburg
+1/25/2023,sale,summer_storage_torr ewbach, $828.26 ,Blacksburg
+1/26/2023,sale,long_term_storage_clyve semark, $464.07 ,Charlottesville
+1/27/2023,sale,summer_storage_livvie chugg, $418.17 ,Charlottesville
+1/28/2023,sale,summer_storage_bethina odegaard, $137.41 ,Charlottesville
+1/28/2023,sale,summer_storage_sibyl riggoll, $144.60 ,Charlottesville
+1/30/2023,sale,summer_storage_sauveur maystone, $651.41 ,Charlottesville
+1/30/2023,sale,shipping_merill delany, $656.08 ,Blacksburg
+2/2/2023,sale,summer_storage_killie galpin, $191.38 ,Charlottesville
+2/2/2023,sale,long_term_storage_faye nowaczyk, $640.30 ,Blacksburg
+2/2/2023,sale,summer_storage_ronnica livens, $889.57 ,Blacksburg
+2/2/2023,sale,summer_storage_peyton crummay, $550.58 ,Blacksburg
+2/2/2023,sale,summer_storage_alyss okell, $438.31 ,Blacksburg
+2/4/2023,sale,summer_storage_parry larcher, $729.20 ,Blacksburg
+2/5/2023,sale,long_term_storage_cecilius tanswell, $235.64 ,Charlottesville
+2/6/2023,sale,long_term_storage_monika eouzan, $146.90 ,Charlottesville
+2/6/2023,sale,summer_storage_eddie bock, $845.03 ,Blacksburg
+2/6/2023,sale,summer_storage_fax benzie, $375.52 ,Blacksburg
+2/6/2023,sale,summer_storage_georgiana howford, $704.43 ,Williamsburg
+2/9/2023,sale,long_term_storage_amanda digby, $393.24 ,Blacksburg
+2/10/2023,sale,summer_storage_georgie twede, $590.43 ,Charlottesville
+2/10/2023,sale,long_term_storage_teddy leicester, $713.87 ,Charlottesville
+2/10/2023,sale,summer_storage_elia lanon, $405.15 ,Blacksburg
+2/11/2023,sale,summer_storage_bartolomeo guyot, $353.07 ,Charlottesville
+2/13/2023,sale,long_term_storage_fairleigh koopman, $122.78 ,Charlottesville
+2/13/2023,sale,summer_storage_maurise yurov, $382.68 ,Charlottesville
+2/13/2023,sale,summer_storage_pip roome, $230.66 ,Williamsburg
+2/15/2023,sale,summer_storage_gianina peplaw, $792.43 ,Williamsburg
+2/16/2023,sale,summer_storage_coralyn essery, $537.05 ,Blacksburg
+2/16/2023,sale,summer_storage_blanche dodle, $336.92 ,Blacksburg
+2/16/2023,sale,long_term_storage_francene davley, $170.88 ,Williamsburg
+2/17/2023,sale,shipping_nananne tebbett, $219.95 ,Charlottesville
+2/18/2023,sale,shipping_tome fishpond, $713.55 ,Blacksburg
+2/18/2023,sale,long_term_storage_dedra hugill, $639.27 ,Blacksburg
+2/20/2023,sale,summer_storage_hogan ragless, $796.97 ,Blacksburg
+2/23/2023,sale,summer_storage_shepard camus, $836.92 ,Charlottesville
+2/24/2023,sale,summer_storage_traver lowe, $482.18 ,Charlottesville
+2/27/2023,sale,summer_storage_fernande etteridge, $932.10 ,Blacksburg
+2/28/2023,sale,summer_storage_kingston buglass, $242.97 ,Blacksburg
+3/2/2023,sale,summer_storage_sileas osburn, $938.10 ,Blacksburg
+3/2/2023,sale,summer_storage_malachi ollander, $438.47 ,Williamsburg
+3/3/2023,sale,summer_storage_natal beagen, $614.27 ,Blacksburg
+3/3/2023,sale,summer_storage_millicent vernazza, $280.35 ,Williamsburg
+3/6/2023,sale,long_term_storage_lavena kennerley, $227.13 ,Blacksburg
+3/8/2023,sale,long_term_storage_rafa humbee, $945.36 ,Williamsburg
+3/9/2023,sale,long_term_storage_malissia chesswas, $883.58 ,Williamsburg
+3/10/2023,sale,summer_storage_arlee drewry, $788.61 ,Charlottesville
+3/11/2023,sale,shipping_monika wike, $760.49 ,Charlottesville
+3/11/2023,sale,summer_storage_tallou falla, $597.81 ,Blacksburg
+3/11/2023,sale,shipping_bradly verner, $180.71 ,Richmond
+3/12/2023,sale,summer_storage_mirella shutler, $847.58 ,Blacksburg
+3/13/2023,sale,summer_storage_winn simon, $173.01 ,Blacksburg
+3/14/2023,sale,summer_storage_mac rizzetti, $471.27 ,Blacksburg
+3/16/2023,sale,long_term_storage_will frise, $111.96 ,Blacksburg
+3/16/2023,sale,summer_storage_godwin clausson, $416.60 ,Blacksburg
+3/17/2023,sale,long_term_storage_karoline woodworth, $229.95 ,Richmond
+3/18/2023,sale,summer_storage_elwood boc, $625.64 ,Charlottesville
+3/18/2023,sale,summer_storage_sallyann litster, $617.48 ,Charlottesville
+3/19/2023,sale,shipping_thornie everix, $520.59 ,Williamsburg
+3/20/2023,sale,summer_storage_dov fennick, $990.40 ,Charlottesville
+3/21/2023,sale,summer_storage_gwyneth sedgmond, $951.50 ,Williamsburg
+3/22/2023,sale,summer_storage_lukas mcgawn, $245.80 ,Blacksburg
+3/23/2023,sale,summer_storage_cobb fidoe, $936.44 ,Charlottesville
+3/24/2023,sale,long_term_storage_amye fullagar, $388.35 ,Blacksburg
+3/24/2023,sale,long_term_storage_emerson gehringer, $135.83 ,Blacksburg
+3/25/2023,sale,summer_storage_etti sloan, $135.71 ,Charlottesville
+3/28/2023,sale,summer_storage_ulrikaumeko crevagh, $235.90 ,Blacksburg
+3/29/2023,sale,summer_storage_gabbi duckers, $673.48 ,Charlottesville
+3/30/2023,sale,summer_storage_leda libbis, $401.80 ,Richmond
+3/31/2023,sale,long_term_storage_rebeka ager, $172.15 ,Charlottesville
+4/5/2023,sale,long_term_storage_tawnya wyley, $666.14 ,Charlottesville
+4/6/2023,sale,long_term_storage_malanie parncutt, $876.75 ,Charlottesville
+4/7/2023,sale,summer_storage_amabel domoney, $634.51 ,Blacksburg
+4/11/2023,sale,summer_storage_eleanore semper, $833.78 ,Charlottesville
+4/11/2023,sale,summer_storage_kattie norewood, $616.04 ,Blacksburg
+4/13/2023,sale,long_term_storage_giacobo belton, $716.12 ,Charlottesville
+4/13/2023,sale,summer_storage_nikki stebbings, $791.73 ,Blacksburg
+4/15/2023,sale,summer_storage_magnum barkly, $507.07 ,Blacksburg
+4/16/2023,sale,summer_storage_mozes grumley, $870.46 ,Blacksburg
+4/17/2023,sale,summer_storage_jo rydings, $555.99 ,Blacksburg
+4/17/2023,sale,long_term_storage_bret foxen, $635.85 ,Williamsburg
+4/20/2023,sale,summer_storage_aldrich arnatt, $640.60 ,Blacksburg
+4/20/2023,sale,long_term_storage_olwen borghese, $421.88 ,Lexington
+4/21/2023,sale,long_term_storage_marysa morhall, $664.02 ,Charlottesville
+4/21/2023,sale,summer_storage_bert dukesbury, $565.38 ,Blacksburg
+4/22/2023,sale,summer_storage_benson venning, $696.16 ,Williamsburg
+4/23/2023,sale,shipping_breena varvara, $803.64 ,Charlottesville
+4/24/2023,sale,summer_storage_karole berthelmot, $754.08 ,Charlottesville
+4/24/2023,sale,summer_storage_corri cassella, $638.60 ,Charlottesville
+4/24/2023,sale,summer_storage_alisander lovart, $840.98 ,Blacksburg
+4/25/2023,sale,summer_storage_elyn fearnill, $253.62 ,Charlottesville
+4/26/2023,sale,long_term_storage_stevana ferrara, $890.71 ,Blacksburg
+4/26/2023,sale,summer_storage_maurene danilevich, $268.89 ,Williamsburg
+4/29/2023,sale,summer_storage_matthiew crudginton, $238.34 ,Blacksburg
+4/30/2023,sale,summer_storage_merla eliasson, $820.16 ,Charlottesville
+4/30/2023,sale,summer_storage_quintilla turmell, $491.72 ,Blacksburg
+5/1/2023,storage_unit_rental,storage_unit_rental_3mo," $(9,450.00)",Charlottesville
+5/1/2023,truck_rental,uhaul_truck_1day, $(140.00),Charlottesville
+5/1/2023,storage_unit_rental,storage_unit_rental_3mo," $(13,387.50)",Blacksburg
+5/1/2023,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+5/1/2023,storage_unit_rental,storage_unit_rental_3mo," $(3,150.00)",Williamsburg
+5/1/2023,truck_rental,uhaul_truck_1day, $(140.00),Williamsburg
+5/1/2023,storage_unit_rental,storage_unit_rental_3mo," $(1,575.00)",Richmond
+5/1/2023,storage_unit_rental,storage_unit_rental_3mo, $(787.50),Lexington
+5/2/2023,sale,long_term_storage_rhett brockway, $810.73 ,Blacksburg
+5/2/2023,sale,shipping_talyah forge, $590.29 ,Blacksburg
+5/7/2023,sale,long_term_storage_beryle phillipson, $548.37 ,Charlottesville
+5/10/2023,sale,summer_storage_willy garr, $261.75 ,Charlottesville
+5/11/2023,sale,long_term_storage_bradney litchmore, $535.71 ,Charlottesville
+5/12/2023,sale,summer_storage_morganne lye, $384.45 ,Charlottesville
+5/13/2023,sale,long_term_storage_charisse huitson, $239.99 ,Charlottesville
+5/13/2023,sale,summer_storage_nedi faircloth, $914.49 ,Richmond
+5/16/2023,sale,long_term_storage_conrade crock, $273.92 ,Blacksburg
+5/18/2023,sale,shipping_anallese pietersen, $859.99 ,Charlottesville
+5/18/2023,sale,shipping_rory balcombe, $859.11 ,Charlottesville
+5/18/2023,sale,long_term_storage_bran di francesco, $598.74 ,Lexington
+5/19/2023,sale,summer_storage_milo ghent, $716.79 ,Charlottesville
+5/20/2023,sale,summer_storage_berky beavon, $521.24 ,Charlottesville
+5/20/2023,sale,long_term_storage_carma fausset, $423.12 ,Charlottesville
+5/22/2023,sale,summer_storage_ilario oakeshott, $307.58 ,Blacksburg
+5/22/2023,sale,summer_storage_geri yule, $960.56 ,Blacksburg
+5/24/2023,sale,shipping_eli brimblecomb, $955.11 ,Blacksburg
+5/25/2023,sale,summer_storage_modestine haseman, $465.04 ,Charlottesville
+5/26/2023,sale,shipping_arie fieldgate, $351.23 ,Blacksburg
+5/26/2023,sale,summer_storage_romain davidofski, $211.46 ,Blacksburg
+5/26/2023,sale,summer_storage_carine sher, $584.47 ,Williamsburg
+5/27/2023,sale,summer_storage_milli fomichyov, $824.22 ,Charlottesville
+5/27/2023,sale,long_term_storage_ingaborg clementi, $898.43 ,Charlottesville
+5/28/2023,sale,shipping_germain hannigane, $770.27 ,Blacksburg
+5/29/2023,sale,summer_storage_patric paffett, $287.05 ,Richmond
+6/1/2023,sale,long_term_storage_nerte choulerton, $323.28 ,Charlottesville
+6/1/2023,sale,shipping_tyrone cosby, $511.79 ,Charlottesville
+6/1/2023,sale,summer_storage_alexa broggio, $211.62 ,Blacksburg
+6/2/2023,sale,summer_storage_stacie munnis, $856.69 ,Charlottesville
+6/2/2023,sale,long_term_storage_eal feuell, $604.27 ,Blacksburg
+6/3/2023,sale,summer_storage_bibi devoy, $952.95 ,Charlottesville
+6/3/2023,sale,long_term_storage_maighdiln paolone, $788.74 ,Blacksburg
+6/4/2023,sale,long_term_storage_cecilia benitez, $898.11 ,Blacksburg
+6/4/2023,sale,summer_storage_stephi kilgrew, $679.98 ,Blacksburg
+6/7/2023,sale,summer_storage_cully edgeson, $485.56 ,Charlottesville
+6/8/2023,sale,summer_storage_caroljean butte, $445.05 ,Charlottesville
+6/10/2023,sale,shipping_josy votier, $276.09 ,Charlottesville
+6/10/2023,sale,summer_storage_hubey gatman, $974.98 ,Charlottesville
+6/10/2023,sale,long_term_storage_valdemar gullyes, $186.91 ,Blacksburg
+6/11/2023,sale,summer_storage_mallorie andrasch, $284.49 ,Charlottesville
+6/11/2023,sale,shipping_danielle cartmel, $260.32 ,Blacksburg
+6/12/2023,sale,summer_storage_neilla wendover, $871.47 ,Charlottesville
+6/12/2023,sale,summer_storage_dallas siverns, $404.47 ,Lexington
+6/14/2023,sale,summer_storage_dolorita lillo, $866.83 ,Blacksburg
+6/14/2023,sale,summer_storage_maisey l'argent, $658.31 ,Williamsburg
+6/15/2023,sale,summer_storage_tamera hilbourne, $871.05 ,Blacksburg
+6/15/2023,sale,summer_storage_esra hellen, $900.81 ,Williamsburg
+6/16/2023,sale,summer_storage_stanfield mathonnet, $932.30 ,Charlottesville
+6/16/2023,sale,summer_storage_neill mowbury, $975.50 ,Charlottesville
+6/16/2023,sale,summer_storage_clarita mucci, $466.22 ,Blacksburg
+6/18/2023,sale,long_term_storage_emanuel bister, $660.22 ,Charlottesville
+6/19/2023,sale,long_term_storage_olivia fitzsymons, $157.90 ,Charlottesville
+6/19/2023,sale,summer_storage_dionisio byforth, $124.19 ,Blacksburg
+6/21/2023,sale,summer_storage_luca kerswell, $728.94 ,Blacksburg
+6/22/2023,sale,long_term_storage_abagail redbourn, $475.33 ,Charlottesville
+6/22/2023,sale,summer_storage_aveline thaw, $994.11 ,Charlottesville
+6/22/2023,sale,summer_storage_ernesto gligori, $323.03 ,Williamsburg
+6/24/2023,sale,long_term_storage_heriberto sollner, $414.92 ,Charlottesville
+6/24/2023,sale,summer_storage_bordie primo, $459.66 ,Williamsburg
+6/25/2023,sale,summer_storage_sayre bearsmore, $896.60 ,Blacksburg
+6/29/2023,sale,shipping_ramona burwood, $202.74 ,Charlottesville
+6/30/2023,sale,shipping_matthiew maffin, $325.07 ,Williamsburg
+7/1/2023,sale,long_term_storage_aurora tippett, $272.38 ,Blacksburg
+7/5/2023,sale,summer_storage_noemi jirak, $158.61 ,Blacksburg
+7/8/2023,sale,summer_storage_ramona behneke, $735.17 ,Blacksburg
+7/8/2023,sale,long_term_storage_brok slorance, $991.94 ,Richmond
+7/9/2023,sale,long_term_storage_christyna middas, $670.69 ,Charlottesville
+7/9/2023,sale,summer_storage_marietta erratt, $277.19 ,Charlottesville
+7/10/2023,sale,summer_storage_verena barhem, $875.64 ,Charlottesville
+7/12/2023,sale,long_term_storage_katherina malden, $454.30 ,Blacksburg
+7/13/2023,sale,summer_storage_lamar aylmer, $512.12 ,Blacksburg
+7/13/2023,sale,summer_storage_jemmie cardenoza, $954.83 ,Blacksburg
+7/13/2023,sale,shipping_scarface kiggel, $508.84 ,Williamsburg
+7/14/2023,sale,long_term_storage_thaddus ganiford, $958.65 ,Williamsburg
+7/15/2023,sale,long_term_storage_lara lygo, $939.09 ,Blacksburg
+7/16/2023,sale,summer_storage_bret gurnell, $374.27 ,Blacksburg
+7/17/2023,sale,long_term_storage_cointon maskew, $867.47 ,Charlottesville
+7/18/2023,sale,summer_storage_lorens hardware, $377.61 ,Charlottesville
+7/18/2023,sale,shipping_leupold sedworth, $628.73 ,Charlottesville
+7/18/2023,sale,summer_storage_raymond swyre, $195.53 ,Blacksburg
+7/19/2023,sale,summer_storage_harvey toffalo, $367.63 ,Blacksburg
+7/21/2023,sale,long_term_storage_reider reihill, $938.33 ,Charlottesville
+7/21/2023,sale,shipping_christal currey, $854.44 ,Williamsburg
+7/22/2023,sale,summer_storage_tabby sphinxe, $210.00 ,Charlottesville
+7/22/2023,sale,summer_storage_wolfgang benedettini, $131.42 ,Blacksburg
+7/23/2023,sale,summer_storage_addia oliffe, $382.94 ,Charlottesville
+7/23/2023,sale,summer_storage_clareta polino, $515.62 ,Blacksburg
+7/23/2023,sale,shipping_zacharia lygo, $292.42 ,Blacksburg
+7/24/2023,sale,long_term_storage_merill yoodall, $241.02 ,Blacksburg
+7/25/2023,sale,summer_storage_merrily aries, $387.30 ,Blacksburg
+7/27/2023,sale,summer_storage_bryn brussell, $445.40 ,Blacksburg
+7/28/2023,sale,long_term_storage_philippine hollows, $596.09 ,Blacksburg
+7/29/2023,sale,long_term_storage_dayle gatheral, $148.65 ,Charlottesville
+7/29/2023,sale,summer_storage_cassie mozzetti, $866.31 ,Blacksburg
+7/29/2023,sale,long_term_storage_thelma drakes, $463.69 ,Blacksburg
+7/30/2023,sale,summer_storage_georgetta drinkeld, $992.71 ,Blacksburg
+7/30/2023,sale,summer_storage_theobald lethcoe, $875.47 ,Richmond
+7/31/2023,sale,long_term_storage_rochell elsworth, $567.24 ,Blacksburg
+8/1/2023,sale,summer_storage_irwinn cashell, $218.23 ,Charlottesville
+8/4/2023,sale,summer_storage_stanley colleford, $510.41 ,Lexington
+8/6/2023,sale,summer_storage_agna ludwell, $806.26 ,Charlottesville
+8/8/2023,sale,summer_storage_risa bernadon, $338.95 ,Lexington
+8/9/2023,sale,long_term_storage_raimondo philipsson, $256.71 ,Blacksburg
+8/9/2023,sale,summer_storage_midge annetts, $190.19 ,Williamsburg
+8/11/2023,sale,long_term_storage_inigo latliff, $943.88 ,Charlottesville
+8/13/2023,sale,long_term_storage_brittaney smallcomb, $182.47 ,Charlottesville
+8/14/2023,sale,summer_storage_heath kamall, $701.23 ,Blacksburg
+8/15/2023,sale,summer_storage_tracie scampion, $547.79 ,Lexington
+8/16/2023,sale,summer_storage_flossi ambler, $422.51 ,Charlottesville
+8/16/2023,sale,summer_storage_nomi britian, $815.51 ,Charlottesville
+8/16/2023,sale,long_term_storage_robb gascard, $282.40 ,Blacksburg
+8/17/2023,sale,summer_storage_pen possa, $574.56 ,Charlottesville
+8/17/2023,sale,long_term_storage_delly le guin, $475.56 ,Blacksburg
+8/17/2023,sale,shipping_weider mouland, $347.79 ,Richmond
+8/19/2023,sale,long_term_storage_welby martusewicz, $421.45 ,Blacksburg
+8/22/2023,sale,shipping_marijo lande, $468.16 ,Blacksburg
+8/22/2023,sale,summer_storage_alain born, $541.28 ,Blacksburg
+8/22/2023,sale,long_term_storage_deanne steynor, $320.94 ,Williamsburg
+8/23/2023,sale,summer_storage_bryce hewins, $907.89 ,Blacksburg
+8/23/2023,sale,summer_storage_patsy ogbourne, $515.47 ,Blacksburg
+8/23/2023,sale,summer_storage_tommie labbett, $714.63 ,Williamsburg
+8/24/2023,sale,summer_storage_loren thumnel, $845.63 ,Charlottesville
+8/24/2023,sale,summer_storage_zeke tarn, $837.99 ,Blacksburg
+8/24/2023,sale,summer_storage_boot moxom, $319.20 ,Richmond
+8/27/2023,sale,shipping_timothea ding, $340.24 ,Blacksburg
+8/27/2023,sale,summer_storage_mallory watts, $572.81 ,Blacksburg
+8/28/2023,sale,summer_storage_darb andrich, $737.48 ,Blacksburg
+8/29/2023,sale,summer_storage_corinna braunds, $753.53 ,Williamsburg
+8/29/2023,sale,long_term_storage_sholom keedy, $656.79 ,Richmond
+8/30/2023,sale,summer_storage_averil hanselmann, $251.00 ,Charlottesville
+8/30/2023,sale,summer_storage_claretta aldcorne, $805.72 ,Blacksburg
+8/30/2023,sale,long_term_storage_giraud albion, $473.01 ,Blacksburg
+8/31/2023,sale,summer_storage_con ratcliff, $239.96 ,Charlottesville
+8/31/2023,sale,summer_storage_hildy cozins, $663.91 ,Blacksburg
+9/1/2023,sale,summer_storage_sharl clarkson, $341.35 ,Richmond
+9/2/2023,sale,summer_storage_kimbra messam, $669.44 ,Blacksburg
+9/5/2023,sale,summer_storage_humphrey buckoke, $896.72 ,Charlottesville
+9/6/2023,sale,summer_storage_henka brotherton, $870.86 ,Charlottesville
+9/6/2023,sale,summer_storage_carlene steeden, $586.50 ,Williamsburg
+9/11/2023,sale,summer_storage_renard blaxton, $951.74 ,Charlottesville
+9/12/2023,sale,summer_storage_berri spilling, $415.14 ,Richmond
+9/13/2023,sale,summer_storage_dion dignam, $344.23 ,Richmond
+9/14/2023,sale,summer_storage_caren blomfield, $421.01 ,Blacksburg
+9/15/2023,sale,summer_storage_olga mayger, $869.79 ,Blacksburg
+9/18/2023,sale,summer_storage_britteny gitsham, $655.85 ,Blacksburg
+9/19/2023,sale,summer_storage_valenka faulo, $978.76 ,Blacksburg
+9/19/2023,sale,summer_storage_clare reisenstein, $663.30 ,Williamsburg
+9/20/2023,sale,long_term_storage_mareah ginnell, $708.58 ,Charlottesville
+9/21/2023,sale,long_term_storage_paule peat, $493.31 ,Charlottesville
+9/21/2023,sale,long_term_storage_glynis yegorchenkov, $810.25 ,Charlottesville
+9/21/2023,sale,summer_storage_kerrill spritt, $540.12 ,Blacksburg
+9/23/2023,sale,long_term_storage_barbey pedlow, $202.22 ,Blacksburg
+9/24/2023,sale,long_term_storage_mariette jandac, $238.82 ,Blacksburg
+9/24/2023,sale,summer_storage_samantha maccallum, $119.82 ,Blacksburg
+9/24/2023,sale,summer_storage_elysha bampton, $495.91 ,Blacksburg
+9/26/2023,sale,long_term_storage_yolanda leetham, $246.96 ,Blacksburg
+9/29/2023,sale,summer_storage_ritchie cleaves, $907.09 ,Blacksburg
+10/1/2023,sale,summer_storage_kaitlin fann, $834.89 ,Charlottesville
+10/3/2023,sale,shipping_molli thying, $542.44 ,Charlottesville
+10/3/2023,sale,long_term_storage_wendel vere, $238.18 ,Blacksburg
+10/4/2023,sale,summer_storage_dani southerton, $648.82 ,Charlottesville
+10/6/2023,sale,summer_storage_mayne mealing, $548.72 ,Williamsburg
+10/8/2023,sale,long_term_storage_lin dorrington, $169.17 ,Blacksburg
+10/9/2023,sale,summer_storage_jackie wetherick, $998.20 ,Charlottesville
+10/13/2023,sale,long_term_storage_lazarus caldera, $896.80 ,Charlottesville
+10/13/2023,sale,summer_storage_marlyn misselbrook, $114.09 ,Charlottesville
+10/15/2023,sale,summer_storage_correy mainz, $689.01 ,Charlottesville
+10/17/2023,sale,summer_storage_cristionna connechie, $747.74 ,Charlottesville
+10/18/2023,sale,summer_storage_barbe mulran, $553.95 ,Blacksburg
+10/18/2023,sale,summer_storage_carmine dullingham, $544.67 ,Richmond
+10/20/2023,sale,summer_storage_dehlia blockley, $250.79 ,Charlottesville
+10/20/2023,sale,summer_storage_jeanie commings, $460.94 ,Charlottesville
+10/21/2023,sale,summer_storage_ody fearenside, $905.67 ,Blacksburg
+10/21/2023,sale,long_term_storage_alex pankethman, $658.67 ,Blacksburg
+10/22/2023,sale,summer_storage_mortie kryszkiecicz, $183.26 ,Blacksburg
+10/22/2023,sale,shipping_travers bridgstock, $956.24 ,Blacksburg
+10/24/2023,sale,summer_storage_oralla bodiam, $932.60 ,Blacksburg
+10/24/2023,sale,summer_storage_lindon croot, $945.39 ,Blacksburg
+10/26/2023,sale,summer_storage_abbott mcaulay, $714.43 ,Richmond
+10/27/2023,sale,long_term_storage_grissel stock, $173.86 ,Charlottesville
+10/28/2023,sale,long_term_storage_wilmar baudacci, $907.28 ,Blacksburg
+11/1/2023,sale,long_term_storage_darcy langstrath, $555.76 ,Blacksburg
+11/2/2023,sale,summer_storage_dayna hayto, $598.95 ,Blacksburg
+11/3/2023,sale,long_term_storage_reggie treneman, $541.57 ,Williamsburg
+11/5/2023,sale,shipping_olin essame, $590.35 ,Blacksburg
+11/5/2023,sale,summer_storage_laure jeffray, $863.18 ,Williamsburg
+11/6/2023,sale,summer_storage_claiborn dobkin, $296.63 ,Blacksburg
+11/10/2023,sale,summer_storage_katalin chettle, $670.74 ,Blacksburg
+11/10/2023,sale,long_term_storage_susana charnick, $122.72 ,Blacksburg
+11/10/2023,sale,long_term_storage_joby figge, $806.75 ,Blacksburg
+11/11/2023,sale,summer_storage_orsa gillaspy, $401.93 ,Charlottesville
+11/11/2023,sale,summer_storage_madison ivey, $658.14 ,Blacksburg
+11/12/2023,sale,long_term_storage_bobbe farquar, $900.54 ,Blacksburg
+11/13/2023,sale,long_term_storage_keelby kensley, $728.76 ,Blacksburg
+11/14/2023,sale,summer_storage_bearnard jermey, $854.24 ,Charlottesville
+11/14/2023,sale,summer_storage_stesha priver, $226.17 ,Charlottesville
+11/19/2023,sale,long_term_storage_sanford joe, $657.30 ,Blacksburg
+11/21/2023,sale,summer_storage_cherianne mottram, $938.13 ,Williamsburg
+11/22/2023,sale,summer_storage_saunder hoyes, $847.19 ,Charlottesville
+11/23/2023,sale,summer_storage_kissee pesticcio, $842.15 ,Charlottesville
+11/23/2023,sale,summer_storage_nisse jorn, $214.91 ,Charlottesville
+11/24/2023,sale,long_term_storage_jeniffer kilroy, $740.77 ,Blacksburg
+11/24/2023,sale,summer_storage_shane krause, $240.17 ,Blacksburg
+11/28/2023,sale,long_term_storage_obed drage, $939.13 ,Blacksburg
+11/29/2023,sale,long_term_storage_phylys swin, $981.10 ,Blacksburg
+11/29/2023,sale,long_term_storage_hi allibone, $779.10 ,Blacksburg
+11/30/2023,sale,long_term_storage_cullan danielian, $996.79 ,Blacksburg
+12/1/2023,sale,summer_storage_moyna baudin, $583.58 ,Blacksburg
+12/2/2023,sale,shipping_ulrica coxhead, $642.98 ,Blacksburg
+12/2/2023,sale,shipping_irma arthurs, $562.01 ,Williamsburg
+12/6/2023,sale,summer_storage_baxy sloss, $550.17 ,Charlottesville
+12/7/2023,sale,shipping_vidovic gilardengo, $577.90 ,Blacksburg
+12/8/2023,sale,summer_storage_edmund reicharz, $635.01 ,Charlottesville
+12/8/2023,sale,summer_storage_dora blindermann, $842.01 ,Blacksburg
+12/10/2023,sale,summer_storage_lurleen lindley, $698.58 ,Blacksburg
+12/13/2023,sale,long_term_storage_lanni mcmeekin, $982.15 ,Blacksburg
+12/15/2023,sale,summer_storage_torrey randell, $619.07 ,Blacksburg
+12/15/2023,sale,summer_storage_sharla corlett, $352.41 ,Richmond
+12/16/2023,sale,long_term_storage_alexi barrowclough, $343.05 ,Charlottesville
+12/16/2023,sale,long_term_storage_alvie toffanelli, $814.54 ,Blacksburg
+12/16/2023,sale,summer_storage_abby spellsworth, $408.15 ,Williamsburg
+12/17/2023,sale,summer_storage_gaultiero quant, $145.55 ,Charlottesville
+12/19/2023,sale,summer_storage_theo lillyman, $813.00 ,Blacksburg
+12/22/2023,sale,summer_storage_benjie feeny, $679.57 ,Charlottesville
+12/23/2023,sale,summer_storage_pyotr lineen, $656.93 ,Richmond
+12/25/2023,sale,summer_storage_karon abelovitz, $942.70 ,Blacksburg
+12/26/2023,sale,summer_storage_chrysler bruhnke, $254.14 ,Blacksburg
+12/27/2023,sale,summer_storage_gerti riep, $761.00 ,Charlottesville
+12/27/2023,sale,summer_storage_alica trevance, $565.39 ,Charlottesville
+12/27/2023,sale,summer_storage_adrianne taile, $299.13 ,Blacksburg
+5/1/2024,equipment,equipment, $(120.00),Charlottesville
+5/1/2024,equipment,equipment, $(170.00),Blacksburg
+5/1/2024,equipment,equipment, $(40.00),Williamsburg
+5/1/2024,truck_rental,uhaul_truck_1day, $(140.00),Richmond
+5/1/2024,equipment,equipment, $(20.00),Richmond
+5/1/2024,truck_rental,uhaul_truck_1day, $(140.00),Lexington
+5/1/2024,equipment,equipment, $(20.00),Lexington
+5/2/2024,truck_rental,uhaul_truck_1day, $(140.00),Charlottesville
+5/2/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+5/2/2024,truck_rental,uhaul_truck_1day, $(140.00),Williamsburg
+5/3/2024,truck_rental,uhaul_truck_1day, $(140.00),Charlottesville
+5/3/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+5/4/2024,truck_rental,uhaul_truck_1day, $(140.00),Charlottesville
+5/4/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+5/5/2024,truck_rental,uhaul_truck_1day, $(140.00),Charlottesville
+5/5/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+5/6/2024,truck_rental,uhaul_truck_1day, $(140.00),Charlottesville
+5/6/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+5/7/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+5/8/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+6/1/2024,mover_pay,mover_pay_rosetta juorio, $(400.66),Charlottesville
+6/1/2024,mover_pay,mover_pay_illa mackeig, $(402.80),Charlottesville
+6/1/2024,mover_pay,mover_pay_theressa sedger, $(373.06),Charlottesville
+6/1/2024,mover_pay,mover_pay_bennett hellewell, $(419.82),Charlottesville
+6/1/2024,mover_pay,mover_pay_trude corbridge, $(382.72),Charlottesville
+6/1/2024,mover_pay,mover_pay_pooh pentlow, $(379.17),Charlottesville
+6/1/2024,mover_pay,mover_pay_hermina dicky, $(411.72),Charlottesville
+6/1/2024,mover_pay,mover_pay_saudra henker, $(402.44),Charlottesville
+6/1/2024,mover_pay,mover_pay_penni vautre, $(531.19),Blacksburg
+6/1/2024,mover_pay,mover_pay_daloris hebbron, $(537.87),Blacksburg
+6/1/2024,mover_pay,mover_pay_clementina louden, $(596.68),Blacksburg
+6/1/2024,mover_pay,mover_pay_herbie candwell, $(506.59),Blacksburg
+6/1/2024,mover_pay,mover_pay_granville cornish, $(545.61),Blacksburg
+6/1/2024,mover_pay,mover_pay_clemens placidi, $(558.80),Blacksburg
+6/1/2024,mover_pay,mover_pay_allx werny, $(559.95),Blacksburg
+6/1/2024,mover_pay,mover_pay_cullie hise, $(533.92),Blacksburg
+6/1/2024,mover_pay,mover_pay_kacey muccino, $(457.17),Williamsburg
+6/1/2024,mover_pay,mover_pay_wes tharme, $(431.19),Williamsburg
+6/1/2024,mover_pay,mover_pay_sonja old, $(395.68),Williamsburg
+6/1/2024,mover_pay,mover_pay_ronny petren, $(380.47),Williamsburg
+6/1/2024,mover_pay,mover_pay_mal marder, $(273.16),Richmond
+6/1/2024,mover_pay,mover_pay_gav tows, $(294.40),Richmond
+6/1/2024,mover_pay,mover_pay_niven fullilove, $(251.48),Richmond
+6/1/2024,mover_pay,mover_pay_rollo kubecka, $(286.27),Richmond
+6/1/2024,mover_pay,mover_pay_joellen healks, $(147.00),Lexington
+6/1/2024,mover_pay,mover_pay_shelby wilflinger, $(120.34),Lexington
+6/1/2024,mover_pay,mover_pay_lenard cristoforo, $(147.56),Lexington
+6/1/2024,mover_pay,mover_pay_toddie prendergrast, $(130.87),Lexington
+8/1/2024,insurance_claim,insurance_claims, $(720.00),Charlottesville
+8/1/2024,insurance_claim,insurance_claims," $(1,020.00)",Blacksburg
+8/1/2024,insurance_claim,insurance_claims, $(240.00),Williamsburg
+8/1/2024,insurance_claim,insurance_claims, $(120.00),Richmond
+8/1/2024,insurance_claim,insurance_claims, $(60.00),Lexington
+8/20/2024,truck_rental,uhaul_truck_1day, $(140.00),Charlottesville
+8/20/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+8/20/2024,truck_rental,uhaul_truck_1day, $(140.00),Williamsburg
+8/20/2024,truck_rental,uhaul_truck_1day, $(140.00),Richmond
+8/20/2024,truck_rental,uhaul_truck_1day, $(140.00),Lexington
+8/21/2024,truck_rental,uhaul_truck_1day, $(140.00),Charlottesville
+8/21/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+8/21/2024,truck_rental,uhaul_truck_1day, $(140.00),Williamsburg
+8/22/2024,truck_rental,uhaul_truck_1day, $(140.00),Charlottesville
+8/22/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+8/23/2024,truck_rental,uhaul_truck_1day, $(140.00),Charlottesville
+8/23/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+8/24/2024,truck_rental,uhaul_truck_1day, $(140.00),Charlottesville
+8/24/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+8/25/2024,truck_rental,uhaul_truck_1day, $(140.00),Charlottesville
+8/25/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+8/26/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+8/27/2024,truck_rental,uhaul_truck_1day, $(140.00),Blacksburg
+9/1/2024,mover_pay,mover_pay_tiphany trippack, $(450.19),Charlottesville
+9/1/2024,mover_pay,mover_pay_rowland rodgerson, $(412.76),Charlottesville
+9/1/2024,mover_pay,mover_pay_alric sink, $(371.94),Charlottesville
+9/1/2024,mover_pay,mover_pay_lockwood edeson, $(364.68),Charlottesville
+9/1/2024,mover_pay,mover_pay_rayner bownde, $(393.01),Charlottesville
+9/1/2024,mover_pay,mover_pay_beniamino o'lagen, $(411.08),Charlottesville
+9/1/2024,mover_pay,mover_pay_alphonse levy, $(432.44),Charlottesville
+9/1/2024,mover_pay,mover_pay_maggie mowles, $(397.74),Charlottesville
+9/1/2024,mover_pay,mover_pay_gerik falls, $(561.18),Blacksburg
+9/1/2024,mover_pay,mover_pay_dael wyvill, $(547.53),Blacksburg
+9/1/2024,mover_pay,mover_pay_jean blamey, $(591.19),Blacksburg
+9/1/2024,mover_pay,mover_pay_vicky bernli, $(501.88),Blacksburg
+9/1/2024,mover_pay,mover_pay_lindsay chaplyn, $(540.45),Blacksburg
+9/1/2024,mover_pay,mover_pay_kellen gawith, $(551.50),Blacksburg
+9/1/2024,mover_pay,mover_pay_steven tillett, $(552.67),Blacksburg
+9/1/2024,mover_pay,mover_pay_elinor ogglebie, $(546.99),Blacksburg
+9/1/2024,mover_pay,mover_pay_anette greenroad, $(364.46),Williamsburg
+9/1/2024,mover_pay,mover_pay_gibb o'connor, $(370.80),Williamsburg
+9/1/2024,mover_pay,mover_pay_clotilda desquesnes, $(394.06),Williamsburg
+9/1/2024,mover_pay,mover_pay_maddy youens, $(432.12),Williamsburg
+9/1/2024,mover_pay,mover_pay_brigg yakubovics, $(309.66),Richmond
+9/1/2024,mover_pay,mover_pay_celestyna lubomirski, $(298.05),Richmond
+9/1/2024,mover_pay,mover_pay_brianne rojel, $(248.24),Richmond
+9/1/2024,mover_pay,mover_pay_donica gallemore, $(275.05),Richmond
+9/1/2024,mover_pay,mover_pay_ulrica mecozzi, $(155.99),Lexington
+9/1/2024,mover_pay,mover_pay_cherlyn di franceshci, $(130.14),Lexington
+9/1/2024,mover_pay,mover_pay_charisse father, $(186.05),Lexington
+9/1/2024,mover_pay,mover_pay_sheryl bruckman, $(142.31),Lexington
