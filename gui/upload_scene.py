@@ -4,7 +4,9 @@ import tkinter
 from tkinter import filedialog
 import os
 import tkinter.messagebox
-from datetime import datetime   
+from datetime import datetime
+from managers.database import Database
+from managers.entry import Entry   
 
 def convert_string_to_date(date_string):
     return datetime.strptime(date_string, "%m/%d/%Y").date()
@@ -22,7 +24,7 @@ def check_for_missing_data(data):
 
 class UploadScene():
     def __init__(self):
-        pass
+        self.database = Database()
 
     def build(self):
         self.frame = tkinter.Frame(self.root, name="upload_scene")
@@ -48,7 +50,10 @@ class UploadScene():
         
         try:
             rows = self.get_data_from_csv(file)
-            self.save_data(rows)
+            entries = self.convert_row_to_entry(rows)
+            for entry in entries:
+                self.database.add_entry(entry)
+            print(self.database.get_entries())
         except Exception as error_message:
             tkinter.messagebox.showerror("Error", f"Failed to process csv file:\n{error_message}")
         finally:
@@ -62,7 +67,8 @@ class UploadScene():
         
         return data[1:] # remove heading row
 
-    def save_data(self, rows):
+    def convert_row_to_entry(self, rows):
+        entries = []
         for row in rows:
             date = row[0]
             category = row[1]
@@ -84,4 +90,8 @@ class UploadScene():
             except Exception as error_message:
                 raise ValueError(f"Amount is not in valid accounting format $(xxx.xx)\n{error_message}")
                 
-            print(date, category, description, amount, location)
+            type = amount < 0 and "EXPENSE" or "REVENUE"
+            entries.append(Entry(date, type, category, description, amount, location)) 
+
+        return entries
+    
