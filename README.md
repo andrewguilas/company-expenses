@@ -1,4 +1,4 @@
-# Company Budget App
+# Company Expenses App
 
 This app will:
 1. Take expenses & revenue data as a .csv *(due 12/17)*
