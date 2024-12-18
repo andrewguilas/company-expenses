@@ -1,4 +1,10 @@
-class Entry():
+from enum import Enum
+
+class EntryType(Enum):
+    EXPENSE = "EXPENSE"
+    REVENUE = "REVENUE"
+
+class Entry:
     def __init__(self, date, type, category, description, amount, location):
         self.id = None
         self.date = date
@@ -7,3 +13,6 @@ class Entry():
         self.description = description
         self.amount = amount
         self.location = location
+
+    def __str__(self):
+        return f"{self.date.strftime('%m/%d/%Y')} {self.type} {self.category} {self.description} {self.amount} {self.location}"
