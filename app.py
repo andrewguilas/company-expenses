@@ -1,9 +1,11 @@
 import tkinter as tk
+from gui.summary_scene import SummaryScene
 from gui.entries_scene import EntriesScene
 
 class App:
     def __init__(self):
         self.entries_scene = EntriesScene()
+        self.summary_scene = SummaryScene()
 
     def start(self):
         self.root = tk.Tk()
@@ -19,6 +21,9 @@ class App:
 
     def show_entries_scene(self):
         self.entries_scene.show(self)
+
+    def show_summary_scene(self):
+        self.summary_scene.show(self)
 
     def on_closing(self):
         if hasattr(self, "connection") and self.connection:

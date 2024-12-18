@@ -20,6 +20,9 @@ class EntriesScene:
         self.filter_row = FilterRow(self.frame, self.database, self.tree)
         self.upload_button = UploadButton(self.frame, self.database, self.filter_row.update_filter_options, self.tree.update_tree)
 
+        self.summary_button = tk.Button(self.frame, text="Summary", command=self.show_summary_scene)
+        self.summary_button.grid(row=4, column=1, padx=10, pady=5, sticky="w")
+
         self.frame.grid_rowconfigure(0, weight=0)
         self.frame.grid_rowconfigure(1, weight=0)
         self.frame.grid_rowconfigure(2, weight=1)
@@ -36,3 +39,7 @@ class EntriesScene:
 
     def hide(self):
         self.frame.grid_forget()
+
+    def show_summary_scene(self):
+        self.hide()
+        self.app.show_summary_scene()
