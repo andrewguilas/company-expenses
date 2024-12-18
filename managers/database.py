@@ -5,8 +5,14 @@ from managers.entry import Entry
 
 class Database:
     def __init__(self):
-        self.db_filename = self.load_config()
-        self.connection = sqlite3.connect(self.db_filename)
+        self.db_filename = self.load_config()\
+
+        try:
+            self.connection = sqlite3.connect(self.db_filename)
+        except sqlite3.Error as error_message:
+            print(f"Database connection error: {error_message}")
+            raise
+
         self.cursor = self.connection.cursor()
         self.create_tables()
 
@@ -41,26 +47,18 @@ class Database:
         self.connection.commit()
         entry.id = self.cursor.lastrowid
 
-    def get_expenses(self, branch=None):
+    def get_entries(self, entry_type):
         with self.connection:
-            if branch:
-                self.cursor.execute("SELECT * FROM entries WHERE type='EXPENSE' AND location=?", (branch,))
-            else:
-                self.cursor.execute("SELECT * FROM entries WHERE type='EXPENSE'")
+            self.cursor.execute("SELECT * FROM entries WHERE type=?", (entry_type,))
             rows = self.cursor.fetchall()
-
         return [Entry(datetime.strptime(row[1], "%Y-%m-%d").date(), row[2], row[3], row[4], row[5], row[6]) for row in rows]
 
-    def get_revenues(self, branch=None):
-        with self.connection:
-            if branch:
-                self.cursor.execute("SELECT * FROM entries WHERE type='REVENUE' AND location=?", (branch,))
-            else:
-                self.cursor.execute("SELECT * FROM entries WHERE type='REVENUE'")
-            rows = self.cursor.fetchall()
+    def get_expenses(self):
+        return self.get_entries('EXPENSE')
 
-        return [Entry(datetime.strptime(row[1], "%Y-%m-%d").date(), row[2], row[3], row[4], row[5], row[6]) for row in rows]
-    
+    def get_revenues(self):
+        return self.get_entries('REVENUE')
+
     def update_entry(self, entry):
         self.cursor.execute("""
             UPDATE entries
@@ -71,7 +69,7 @@ class Database:
 
     def delete_entry(self, entry):
         self.cursor.execute("""
-            DELETE FROM entries WHERE id=?                 
+            DELETE FROM entries WHERE id=?
         """, (entry.id,))
         self.connection.commit()
 
