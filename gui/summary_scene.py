@@ -74,10 +74,8 @@ class SummaryScene:
 
             # Initialize the months for each category-location pair
             for year in [2022, 2023]:
-                for month in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]:
-                    date_string = f"{year}_{month}"
-
-                    # Initialize the dictionary for the location, category, and month
+                for month in range(1, 13):
+                    date_string = f"{year}_{month:02d}"  # Zero-padded months
                     if date_string not in stats[entry.location][entry.category]:
                         stats[entry.location][entry.category][date_string] = {
                             "YEAR": year,
@@ -86,7 +84,8 @@ class SummaryScene:
                             "AMOUNT": 0
                         }
 
-            date_string = f"{entry.date.year}_{entry.date.month}"
+
+            date_string = f"{entry.date.year}_{entry.date.month:02d}"
             # Ensure the key exists before updating
             if date_string not in stats[entry.location][entry.category]:
                 stats[entry.location][entry.category][date_string] = {
@@ -114,14 +113,14 @@ class SummaryScene:
         for location, categories in stats.items():
             for category, data in categories.items():
                 if category == selected_category:
-                    global_max = max(global_max, max(data[month]["AMOUNT"] for month in data))
+                    global_max = max(global_max, max(abs(data[month]["AMOUNT"]) for month in data))
 
         # Collect all locations to determine the number of histograms
         locations = [location for location in stats]
         num_locations = len(locations)
 
         # Dynamic figure height adjustment
-        total_canvas_height = 800  # Total height available for all histograms
+        total_canvas_height = 600  # Total height available for all histograms
         histogram_height = total_canvas_height / num_locations  # Height for each histogram
 
         # Create a single figure with multiple subplots
@@ -135,32 +134,27 @@ class SummaryScene:
         for ax, location in zip(axes, locations):
             for category, data in stats[location].items():
                 if category == selected_category:
-                    self.display_histogram(ax, category, data, global_max)
+                    self.display_histogram(ax, category, data, global_max, location)
 
-            ax.set_title(location, fontsize=10)
             ax.set_ylim(0, global_max)
 
-        # Add the figure to the canvas
+        # Center the charts on the screen
         fig.patch.set_facecolor('white')
         canvas = FigureCanvasTkAgg(fig, master=self.chart_frame)
         canvas.draw()
-        canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
+        canvas.get_tk_widget().pack(pady=50, padx=10, fill=tk.BOTH, expand=True)  # Add padding for centering
 
         self.canvas.config(scrollregion=self.canvas.bbox("all"))
 
-
-    def display_histogram(self, ax, category, data, global_max):
+    def display_histogram(self, ax, category, data, global_max, location):
         MIN_DATE = "2022_1"
         MAX_DATE = "2023_12"
-
-        # Prepare data for histogram (month_year vs amount)
-        month_years = sorted(data.keys())
-        amounts = [data[my]["AMOUNT"] for my in month_years]
 
         # Define the range of months to include all months even with no data
         start_date = datetime.strptime(MIN_DATE, "%Y_%m")
         end_date = datetime.strptime(MAX_DATE, "%Y_%m")
 
+        # Generate a list of months between start_date and end_date
         months = []
         current_date = start_date
         while current_date <= end_date:
@@ -169,15 +163,30 @@ class SummaryScene:
 
         # Initialize the full data dictionary with zero amounts for missing months
         full_data = {month: 0 for month in months}
-        for month_year in month_years:
-            full_data[month_year] = data[month_year]["AMOUNT"]
+        for month_year, values in data.items():
+            if month_year in full_data:
+                full_data[month_year] = abs(values["AMOUNT"])  # Use absolute value for amounts
 
+        # Extract amounts in the correct order of months
         amounts = [full_data[month] for month in months]
 
         # Plot the histogram
-        ax.bar(months, amounts, label=category)
+        ax.bar(months, amounts, color="skyblue", edgecolor="black")
         ax.tick_params(axis="x", rotation=90)
-        ax.legend(fontsize=8)
+
+        # Add location title inside the chart
+        ax.text(
+            0.01, 0.95, location, transform=ax.transAxes, fontsize=10,
+            verticalalignment='top', horizontalalignment='left', color='black', weight='bold'
+        )
+
+        # Remove chart border and grid for a cleaner look
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+        ax.spines['bottom'].set_color('gray')
+        ax.grid(axis='y', linestyle='--', alpha=0.7)
+        ax.set_axisbelow(True)
 
     def show_entries_scene(self, event=None):
         self.hide()
