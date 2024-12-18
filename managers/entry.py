@@ -1,8 +1,14 @@
+from enum import Enum
+
+class EntryType(Enum):
+    EXPENSE = "EXPENSE"
+    REVENUE = "REVENUE"
+
 class Entry:
     def __init__(self, date, type, category, description, amount, location):
         self.id = None
         self.date = date
-        self.type = type  # 'EXPENSE' or 'REVENUE'
+        self.type = type
         self.category = category
         self.description = description
         self.amount = amount

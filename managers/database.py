@@ -29,7 +29,7 @@ class Database:
                 description TEXT NOT NULL,
                 amount REAL NOT NULL,
                 location TEXT NOT NULL
-            )                 
+            )
         """)
         self.connection.commit()
 
@@ -37,7 +37,7 @@ class Database:
         self.cursor.execute("""
             INSERT INTO entries (date, type, category, description, amount, location)
             VALUES (?, ?, ?, ?, ?, ?)
-        """, (entry.date, entry.type, entry.category, entry.description, entry.amount, entry.location))
+        """, (entry.date, entry.type.value, entry.category, entry.description, entry.amount, entry.location))
         self.connection.commit()
         entry.id = self.cursor.lastrowid
 
@@ -66,7 +66,7 @@ class Database:
             UPDATE entries
             SET date=?, type=?, category=?, description=?, amount=?, location=?
             WHERE id=?
-        """, (entry.date, entry.type, entry.category, entry.description, entry.amount, entry.location, entry.id))
+        """, (entry.date, entry.type.value, entry.category, entry.description, entry.amount, entry.location, entry.id))
         self.connection.commit()
 
     def delete_entry(self, entry):

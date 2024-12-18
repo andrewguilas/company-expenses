@@ -9,8 +9,7 @@ class EntriesScene:
     def __init__(self):
         self.database = Database()
         self.entries = []
-        self.locations = self.database.get_locations()
-        self.categories = self.database.get_categories()  # Assuming get_categories() returns all categories
+
         self.selected_location = None  # None represents "All Locations"
         self.selected_type = None  # None represents "All Types"
         self.selected_category = None  # None represents "All Categories"
@@ -32,6 +31,7 @@ class EntriesScene:
         self.filter_frame.grid(row=1, column=0, columnspan=2, padx=10, pady=5, sticky="ew")
 
         # Location filter
+        self.locations = self.database.get_locations()
         self.location_filter_label = tk.Label(self.filter_frame, text="Filter by location:")
         self.location_filter_label.grid(row=0, column=0, padx=10, pady=5)
         self.location_filter = ttk.Combobox(self.filter_frame, values=["ALL"] + self.locations, state="readonly")
@@ -48,6 +48,7 @@ class EntriesScene:
         self.type_filter.bind("<<ComboboxSelected>>", self.update_tree)
 
         # Category filter
+        self.categories = self.database.get_categories()  # Assuming get_categories() returns all categories
         self.category_filter_label = tk.Label(self.filter_frame, text="Filter by category:")
         self.category_filter_label.grid(row=0, column=4, padx=10, pady=5)
         self.category_filter = ttk.Combobox(self.filter_frame, values=["ALL"] + self.categories, state="readonly")
