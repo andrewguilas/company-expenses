@@ -28,6 +28,7 @@ class App:
     def on_closing(self):
         if hasattr(self, "connection") and self.connection:
             self.connection.close()
+        self.root.quit()
         self.root.destroy()
 
 if __name__ == "__main__":
