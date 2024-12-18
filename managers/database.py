@@ -82,6 +82,13 @@ class Database:
 
         return [row[0] for row in rows]
 
+    def get_categories(self):
+        with self.connection:
+            self.cursor.execute("SELECT DISTINCT category FROM entries")
+            rows = self.cursor.fetchall()
+
+        return [row[0] for row in rows]
+
     def close(self):
         self.cursor.close()
         self.connection.close()

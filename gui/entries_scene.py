@@ -10,43 +10,63 @@ class EntriesScene:
         self.database = Database()
         self.entries = []
         self.locations = self.database.get_locations()
+        self.categories = self.database.get_categories()  # Assuming get_categories() returns all categories
         self.selected_location = None  # None represents "All Locations"
-        self.is_showing_expenses = True
+        self.selected_type = None  # None represents "All Types"
+        self.selected_category = None  # None represents "All Categories"
+        self.is_sorted_by = None  # No column is sorted by default
+        self.sort_order = {}  # Dictionary to store the sort order for each column
 
     def build(self):
         self.frame = tk.Frame(self.root, name="entries_scene")
 
+        # Search box
         self.search_label = tk.Label(self.frame, text="Search by column:")
         self.search_label.grid(row=0, column=0, padx=10, pady=5)
         self.search_entry = tk.Entry(self.frame)
         self.search_entry.grid(row=0, column=1, padx=10, pady=5)
         self.search_entry.bind("<KeyRelease>", self.update_tree)
 
-        self.tree = ttk.Treeview(self.frame, columns=("date", "category", "description", "amount", "location"), show="headings")
-        self.tree.heading("date", text="Date")
-        self.tree.heading("category", text="Category")
-        self.tree.heading("description", text="Description")
-        self.tree.heading("amount", text="Amount")
-        self.tree.heading("location", text="Location")
-        self.tree.grid(row=1, column=0, columnspan=2, padx=10, pady=10, sticky="nsew")
+        # Filter row (location, type, category)
+        self.filter_frame = tk.Frame(self.frame)
+        self.filter_frame.grid(row=1, column=0, columnspan=2, padx=10, pady=5, sticky="ew")
 
-        self.expenses_button = tk.Button(self.frame, text="Show Expenses", command=self.filter_by_expenses)
-        self.expenses_button.grid(row=2, column=0, padx=10, pady=5, sticky="ew")
-        self.revenues_button = tk.Button(self.frame, text="Show Revenues", command=self.filter_by_revenues)
-        self.revenues_button.grid(row=2, column=1, padx=10, pady=5, sticky="ew")
+        # Type filter
+        self.type_filter_label = tk.Label(self.filter_frame, text="Filter by type:")
+        self.type_filter_label.grid(row=0, column=0, padx=10, pady=5)
+        self.type_filter = ttk.Combobox(self.filter_frame, values=["ALL", "EXPENSE", "REVENUE"], state="readonly")
+        self.type_filter.set("ALL")
+        self.type_filter.grid(row=0, column=1, padx=10, pady=5)
+        self.type_filter.bind("<<ComboboxSelected>>", self.update_tree)
 
-        # Location buttons
-        self.location_buttons_frame = tk.Frame(self.frame)
-        self.location_buttons_frame.grid(row=3, column=0, columnspan=2, padx=10, pady=5, sticky="ew")
+        # Category filter
+        self.category_filter_label = tk.Label(self.filter_frame, text="Filter by category:")
+        self.category_filter_label.grid(row=0, column=2, padx=10, pady=5)
+        self.category_filter = ttk.Combobox(self.filter_frame, values=["ALL"] + self.categories, state="readonly")
+        self.category_filter.set("ALL")
+        self.category_filter.grid(row=0, column=3, padx=10, pady=5)
+        self.category_filter.bind("<<ComboboxSelected>>", self.update_tree)
 
-        all_locations_button = tk.Button(self.location_buttons_frame, text="ALL", command=lambda: self.filter_by_location("ALL"))
-        all_locations_button.grid(row=0, column=0, padx=5, pady=5)
-        for location in self.locations:
-            location_button = tk.Button(self.location_buttons_frame, text=location, command=lambda loc=location: self.filter_by_location(loc))
-            location_button.grid(row=0, column=self.locations.index(location)+1, padx=5, pady=5)
+        # Location filter
+        self.location_filter_label = tk.Label(self.filter_frame, text="Filter by location:")
+        self.location_filter_label.grid(row=0, column=4, padx=10, pady=5)
+        self.location_filter = ttk.Combobox(self.filter_frame, values=["ALL"] + self.locations, state="readonly")
+        self.location_filter.set("ALL")
+        self.location_filter.grid(row=0, column=5, padx=10, pady=5)
+        self.location_filter.bind("<<ComboboxSelected>>", self.update_tree)
 
-        # Configure the row and column to expand with window resizing
-        self.frame.grid_rowconfigure(1, weight=1)
+        # Treeview for entries
+        self.tree = ttk.Treeview(self.frame, columns=("date", "type", "category", "description", "amount", "location"), show="headings")
+        self.tree.heading("date", text="Date", command=lambda: self.sort_by_column("date"))
+        self.tree.heading("type", text="Type", command=lambda: self.sort_by_column("type"))
+        self.tree.heading("category", text="Category", command=lambda: self.sort_by_column("category"))
+        self.tree.heading("description", text="Description", command=lambda: self.sort_by_column("description"))
+        self.tree.heading("amount", text="Amount", command=lambda: self.sort_by_column("amount"))
+        self.tree.heading("location", text="Location", command=lambda: self.sort_by_column("location"))
+        self.tree.grid(row=2, column=0, columnspan=2, padx=10, pady=10, sticky="nsew")
+
+        # Configure row and column weights for resizing
+        self.frame.grid_rowconfigure(2, weight=1)
         self.frame.grid_columnconfigure(0, weight=1)
 
         self.update_tree()
@@ -65,31 +85,48 @@ class EntriesScene:
 
     def update_tree(self, event=None):
         search_query = self.search_entry.get()
+        location_filter = self.location_filter.get()
+        type_filter = self.type_filter.get()
+        category_filter = self.category_filter.get()
 
+        # Apply filters
+        filtered_entries = self.database.get_expenses() + self.database.get_revenues()
+
+        if location_filter != "ALL":
+            filtered_entries = [entry for entry in filtered_entries if entry.location == location_filter]
+
+        if type_filter != "ALL":
+            filtered_entries = [entry for entry in filtered_entries if entry.type == type_filter]
+
+        if category_filter != "ALL":
+            filtered_entries = [entry for entry in filtered_entries if entry.category == category_filter]
+
+        # Apply search filter
+        filtered_entries = [entry for entry in filtered_entries if self.meets_search_query(entry, search_query)]
+
+        # Apply sorting
+        if self.is_sorted_by:
+            filtered_entries = sorted(filtered_entries, key=lambda x: getattr(x, self.is_sorted_by), reverse=self.sort_order.get(self.is_sorted_by, True))
+
+        # Clear existing entries in the tree
         for row in self.tree.get_children():
             self.tree.delete(row)
 
-        if self.is_showing_expenses:
-            self.entries = self.database.get_expenses(branch=self.selected_location)
-        else:
-            self.entries = self.database.get_revenues(branch=self.selected_location)
-
-        for entry in self.entries:
-            if self.meets_search_query(entry, search_query):
-                date_str = entry.date.strftime("%m/%d/%Y") 
-                self.tree.insert("", "end", values=(date_str, entry.category, entry.description, f"${entry.amount:,.2f}", entry.location))
+        # Insert filtered and sorted entries into the tree
+        for entry in filtered_entries:
+            date_str = entry.date.strftime("%m/%d/%Y") 
+            self.tree.insert("", "end", values=(date_str, entry.type, entry.category, entry.description, f"${entry.amount:,.2f}", entry.location))
 
     def meets_search_query(self, entry, search_query):
         return strip_string(search_query) in strip_string(str(entry))
 
-    def filter_by_expenses(self):
-        self.is_showing_expenses = True
-        self.update_tree()
+    def sort_by_column(self, column):
+        # Toggle the sort order for the clicked column
+        if self.is_sorted_by == column:
+            self.sort_order[column] = not self.sort_order.get(column, True)  # Reverse the order
+        else:
+            self.is_sorted_by = column
+            self.sort_order[column] = True  # Default to ascending order
 
-    def filter_by_revenues(self):
-        self.is_showing_expenses = False
-        self.update_tree()
-
-    def filter_by_location(self, location):
-        self.selected_location = None if location == "ALL" else location
+        # Re-sort and update the treeview
         self.update_tree()
