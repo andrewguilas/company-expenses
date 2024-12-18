@@ -1,4 +1,3 @@
-import os
 from gui.upload_scene import UploadScene
 from gui.entries_scene import EntriesScene
 import tkinter
@@ -6,24 +5,15 @@ from managers.database import Database
 
 class App:
     def __init__(self):
-        self.upload_scene = UploadScene()
         self.entries_scene = EntriesScene()
-        self.database = Database()
 
     def start(self):
         self.root = tkinter.Tk()
         self.root.title = "Company Expenses"
         self.root.geometry("1024x576")
-
-        if len(self.database.get_expenses()) == 0:
-            self.show_upload_scene()
-        else:
-            self.show_entries_scene()
-
+        
+        self.show_entries_scene()
         self.root.mainloop()
-
-    def show_upload_scene(self):
-        self.upload_scene.show(self)
 
     def show_entries_scene(self):
         self.entries_scene.show(self)
