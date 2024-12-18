@@ -9,6 +9,9 @@ class EntriesScene:
     def __init__(self):
         self.database = Database()
         self.entries = []
+        self.locations = self.database.get_locations()
+        self.selected_location = None  # None represents "All Locations"
+        self.is_showing_expenses = True
 
     def build(self):
         self.frame = tk.Frame(self.root, name="entries_scene")
@@ -29,15 +32,23 @@ class EntriesScene:
 
         self.expenses_button = tk.Button(self.frame, text="Show Expenses", command=self.filter_by_expenses)
         self.expenses_button.grid(row=2, column=0, padx=10, pady=5, sticky="ew")
-
         self.revenues_button = tk.Button(self.frame, text="Show Revenues", command=self.filter_by_revenues)
         self.revenues_button.grid(row=2, column=1, padx=10, pady=5, sticky="ew")
+
+        # Location buttons
+        self.location_buttons_frame = tk.Frame(self.frame)
+        self.location_buttons_frame.grid(row=3, column=0, columnspan=2, padx=10, pady=5, sticky="ew")
+
+        all_locations_button = tk.Button(self.location_buttons_frame, text="ALL", command=lambda: self.filter_by_location("ALL"))
+        all_locations_button.grid(row=0, column=0, padx=5, pady=5)
+        for location in self.locations:
+            location_button = tk.Button(self.location_buttons_frame, text=location, command=lambda loc=location: self.filter_by_location(loc))
+            location_button.grid(row=0, column=self.locations.index(location)+1, padx=5, pady=5)
 
         # Configure the row and column to expand with window resizing
         self.frame.grid_rowconfigure(1, weight=1)
         self.frame.grid_columnconfigure(0, weight=1)
 
-        self.filter_by_expenses()
         self.update_tree()
 
     def show(self, app):
@@ -58,8 +69,10 @@ class EntriesScene:
         for row in self.tree.get_children():
             self.tree.delete(row)
 
-        if not self.entries:
-            return
+        if self.is_showing_expenses:
+            self.entries = self.database.get_expenses(branch=self.selected_location)
+        else:
+            self.entries = self.database.get_revenues(branch=self.selected_location)
 
         for entry in self.entries:
             if self.meets_search_query(entry, search_query):
@@ -70,9 +83,13 @@ class EntriesScene:
         return strip_string(search_query) in strip_string(str(entry))
 
     def filter_by_expenses(self):
-        self.entries = self.database.get_expenses()
+        self.is_showing_expenses = True
         self.update_tree()
 
     def filter_by_revenues(self):
-        self.entries = self.database.get_revenues()
+        self.is_showing_expenses = False
+        self.update_tree()
+
+    def filter_by_location(self, location):
+        self.selected_location = None if location == "ALL" else location
         self.update_tree()

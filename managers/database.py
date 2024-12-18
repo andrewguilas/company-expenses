@@ -75,6 +75,13 @@ class Database:
         """, (entry.id,))
         self.connection.commit()
 
+    def get_locations(self):
+        with self.connection:
+            self.cursor.execute("SELECT DISTINCT location FROM entries")
+            rows = self.cursor.fetchall()
+
+        return [row[0] for row in rows]
+
     def close(self):
         self.cursor.close()
         self.connection.close()
