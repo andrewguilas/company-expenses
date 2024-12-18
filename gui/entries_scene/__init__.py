@@ -1,9 +1,9 @@
 import tkinter as tk
-from gui.components.filter_row import FilterRow
-from gui.components.search_bar import SearchBar
-from gui.components.tree import Tree
-from gui.components.sum_row import SumRow
-from gui.components.upload_button import UploadButton
+from .filter_row import FilterRow
+from .search_bar import SearchBar
+from .tree import Tree
+from .sum_row import SumRow
+from .upload_button import UploadButton
 from managers.database import Database
 
 class EntriesScene:
