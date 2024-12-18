@@ -4,6 +4,7 @@ from managers.database import Database
 class SummaryScene:
     def __init__(self):
         self.database = Database()
+        self.summary = {}
 
     def build(self, root):
         self.frame = tk.Frame(root, name="summary_scene")
@@ -18,8 +19,31 @@ class SummaryScene:
             self.build(app.root)
         self.frame.grid(row=0, column=0, sticky="nsew")
 
+        self.get_summary()
+
     def hide(self):
         self.frame.grid_forget()
+
+    def get_summary(self):
+        entries = self.database.get_entries()        
+        for entry in entries:
+            if entry.location not in self.summary:
+                self.summary[entry.location] = {}
+
+            if entry.category not in self.summary[entry.location]:
+                self.summary[entry.location][entry.category] = {}
+
+            date_string = f"{entry.date.year}_{entry.date.month}".upper()
+            if date_string not in self.summary[entry.location][entry.category]:
+                self.summary[entry.location][entry.category][date_string] = {
+                    "YEAR": entry.date.year,
+                    "MONTH": entry.date.month,
+                    "COUNT": 0,
+                    "AMOUNT": 0
+                }
+
+            self.summary[entry.location][entry.category][date_string]["COUNT"] += 1
+            self.summary[entry.location][entry.category][date_string]["AMOUNT"] += entry.amount
 
     def show_entries_scene(self, event=None):
         self.hide()

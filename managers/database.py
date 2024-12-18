@@ -45,10 +45,7 @@ class Database:
         """)
         self.connection.commit()
 
-# database.py
-
     def add_entry(self, entry):
-        # Check for duplicate
         self.cursor.execute("""
             SELECT 1 FROM entries WHERE date=? AND type=? AND category=? AND description=? AND amount=? AND location=?
         """, (entry.date, entry.type.value, entry.category, entry.description, entry.amount, entry.location))
@@ -63,9 +60,12 @@ class Database:
         self.connection.commit()
         entry.id = self.cursor.lastrowid
 
-    def get_entries(self, entry_type):
+    def get_entries(self, entry_type=None):
         with self.connection:
-            self.cursor.execute("SELECT * FROM entries WHERE type=?", (entry_type,))
+            if entry_type:
+                self.cursor.execute("SELECT * FROM entries WHERE type=?", (entry_type,))
+            else:
+                self.cursor.execute("SELECT * FROM entries")
             rows = self.cursor.fetchall()
         return [Entry(datetime.strptime(row[1], "%Y-%m-%d").date(), row[2], row[3], row[4], row[5], row[6]) for row in rows]
 
