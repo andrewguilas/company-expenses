@@ -31,29 +31,29 @@ class EntriesScene:
         self.filter_frame = tk.Frame(self.frame)
         self.filter_frame.grid(row=1, column=0, columnspan=2, padx=10, pady=5, sticky="ew")
 
+        # Location filter
+        self.location_filter_label = tk.Label(self.filter_frame, text="Filter by location:")
+        self.location_filter_label.grid(row=0, column=0, padx=10, pady=5)
+        self.location_filter = ttk.Combobox(self.filter_frame, values=["ALL"] + self.locations, state="readonly")
+        self.location_filter.set("ALL")
+        self.location_filter.grid(row=0, column=1, padx=10, pady=5)
+        self.location_filter.bind("<<ComboboxSelected>>", self.update_tree)
+
         # Type filter
         self.type_filter_label = tk.Label(self.filter_frame, text="Filter by type:")
-        self.type_filter_label.grid(row=0, column=0, padx=10, pady=5)
+        self.type_filter_label.grid(row=0, column=2, padx=10, pady=5)
         self.type_filter = ttk.Combobox(self.filter_frame, values=["ALL", "EXPENSE", "REVENUE"], state="readonly")
         self.type_filter.set("ALL")
-        self.type_filter.grid(row=0, column=1, padx=10, pady=5)
+        self.type_filter.grid(row=0, column=3, padx=10, pady=5)
         self.type_filter.bind("<<ComboboxSelected>>", self.update_tree)
 
         # Category filter
         self.category_filter_label = tk.Label(self.filter_frame, text="Filter by category:")
-        self.category_filter_label.grid(row=0, column=2, padx=10, pady=5)
+        self.category_filter_label.grid(row=0, column=4, padx=10, pady=5)
         self.category_filter = ttk.Combobox(self.filter_frame, values=["ALL"] + self.categories, state="readonly")
         self.category_filter.set("ALL")
-        self.category_filter.grid(row=0, column=3, padx=10, pady=5)
+        self.category_filter.grid(row=0, column=5, padx=10, pady=5)
         self.category_filter.bind("<<ComboboxSelected>>", self.update_tree)
-
-        # Location filter
-        self.location_filter_label = tk.Label(self.filter_frame, text="Filter by location:")
-        self.location_filter_label.grid(row=0, column=4, padx=10, pady=5)
-        self.location_filter = ttk.Combobox(self.filter_frame, values=["ALL"] + self.locations, state="readonly")
-        self.location_filter.set("ALL")
-        self.location_filter.grid(row=0, column=5, padx=10, pady=5)
-        self.location_filter.bind("<<ComboboxSelected>>", self.update_tree)
 
         # Treeview for entries
         self.tree = ttk.Treeview(self.frame, columns=("date", "type", "category", "description", "amount", "location"), show="headings")
@@ -68,6 +68,13 @@ class EntriesScene:
         # Configure row and column weights for resizing
         self.frame.grid_rowconfigure(2, weight=1)
         self.frame.grid_columnconfigure(0, weight=1)
+
+        # Labels for sum and count
+        self.sum_label = tk.Label(self.frame, text="Total Amount: $0.00")
+        self.sum_label.grid(row=3, column=0, padx=10, pady=5, sticky="w")
+
+        self.count_label = tk.Label(self.frame, text="Total Entries: 0")
+        self.count_label.grid(row=3, column=1, padx=10, pady=5, sticky="w")
 
         self.update_tree()
 
@@ -113,9 +120,19 @@ class EntriesScene:
             self.tree.delete(row)
 
         # Insert filtered and sorted entries into the tree
+        total_amount = 0
         for entry in filtered_entries:
-            date_str = entry.date.strftime("%m/%d/%Y") 
-            self.tree.insert("", "end", values=(date_str, entry.type, entry.category, entry.description, f"${entry.amount:,.2f}", entry.location))
+            date_str = entry.date.strftime("%m/%d/%Y")
+            
+            # Set amount to negative for expenses, positive for revenues
+            amount = entry.amount if entry.type == "REVENUE" else -entry.amount
+
+            self.tree.insert("", "end", values=(date_str, entry.type, entry.category, entry.description, f"${amount:,.2f}", entry.location))
+            total_amount += amount
+
+        # Update sum and count labels
+        self.sum_label.config(text=f"Total Amount: ${total_amount:,.2f}")
+        self.count_label.config(text=f"Total Entries: {len(filtered_entries)}")
 
     def meets_search_query(self, entry, search_query):
         return strip_string(search_query) in strip_string(str(entry))
