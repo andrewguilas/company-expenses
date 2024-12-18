@@ -12,6 +12,7 @@ class EntriesScene:
 
     def build(self, root):
         self.frame = tk.Frame(root, name="entries_scene")
+        self.frame.grid(row=0, column=0, sticky="nsew")
 
         self.sum_row = SumRow(self.frame)
         self.tree = Tree(self.frame, self.database, self.sum_row)
@@ -19,19 +20,19 @@ class EntriesScene:
         self.filter_row = FilterRow(self.frame, self.database, self.tree)
         self.upload_button = UploadButton(self.frame, self.database, self.filter_row.update_filter_options, self.tree.update_tree)
 
+        self.frame.grid_rowconfigure(0, weight=0)
+        self.frame.grid_rowconfigure(1, weight=0)
         self.frame.grid_rowconfigure(2, weight=1)
+        self.frame.grid_rowconfigure(3, weight=0)
         self.frame.grid_columnconfigure(0, weight=1)
 
         self.tree.update_tree()
 
     def show(self, app):
         self.app = app
-
         if not hasattr(self, "frame"):
             self.build(app.root)
-
         self.frame.grid(row=0, column=0, sticky="nsew")
 
-
     def hide(self):
-        self.frame.pack_forget()
+        self.frame.grid_forget()

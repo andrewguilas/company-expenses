@@ -11,6 +11,9 @@ class App:
         self.root.geometry("1024x576")
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
+        self.root.grid_rowconfigure(0, weight=1)
+        self.root.grid_columnconfigure(0, weight=1)
+
         self.show_entries_scene()
         self.root.mainloop()
 
@@ -20,7 +23,6 @@ class App:
     def on_closing(self):
         if hasattr(self, "connection") and self.connection:
             self.connection.close()
-
         self.root.destroy()
 
 if __name__ == "__main__":

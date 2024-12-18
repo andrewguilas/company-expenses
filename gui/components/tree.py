@@ -13,9 +13,9 @@ class Tree:
         self.entries = []
 
         self.search_query = ""
-        self.selected_location = None # If none, then selected location is all
-        self.selected_type = None # If none, then selected type is all
-        self.selected_category = None # if none, then selected category is all
+        self.selected_location = None  # If none, then selected location is all
+        self.selected_type = None  # If none, then selected type is all
+        self.selected_category = None  # if none, then selected category is all
         self.is_sorted_by = None  # No column is sorted by default
         self.sort_order = {}  # Store sort order for each column
 
@@ -29,7 +29,10 @@ class Tree:
         self.tree.heading("description", text="Description", command=lambda: self.update_sorted_by("description"))
         self.tree.heading("amount", text="Amount", command=lambda: self.update_sorted_by("amount"))
         self.tree.heading("location", text="Location", command=lambda: self.update_sorted_by("location"))
-        self.tree.grid(row=2, column=0, columnspan=2, padx=10, pady=10, sticky="nsew")
+        self.tree.grid(row=2, column=0, padx=10, pady=10, sticky="nsew")
+
+        frame.grid_rowconfigure(2, weight=1)
+        frame.grid_columnconfigure(0, weight=1)
 
     def update_sorted_by(self, column):
         # Toggle the sort order: if already sorted by this column, reverse the order
@@ -42,16 +45,16 @@ class Tree:
         self.update_tree()
 
     def update_tree(self, search_query=None, selected_location=None, selected_type=None, selected_category=None):
-        if search_query:
+        if search_query is not None:
             self.search_query = search_query
 
-        if selected_location:
+        if selected_location is not None:
             self.selected_location = selected_location
 
-        if selected_type:
+        if selected_type is not None:
             self.selected_type = selected_type
 
-        if selected_category:
+        if selected_category is not None:
             self.selected_category = selected_category
 
         # sort order is already set in the above update_sorted_by()
@@ -88,8 +91,7 @@ class Tree:
         return filtered_entries
 
     def apply_search(self, filtered_entries):
-        filtered_entries = [entry for entry in filtered_entries if meets_search_query(entry, self.search_query)]
-        return filtered_entries
+        return [entry for entry in filtered_entries if meets_search_query(entry, self.search_query)]
 
     def apply_sort(self, filtered_entries):
         if self.is_sorted_by:
