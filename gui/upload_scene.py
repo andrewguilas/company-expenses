@@ -81,7 +81,7 @@ class UploadScene():
                 raise ValueError(f"Missing required data: {', '.join(missing_data)}")
 
             try:
-                date = convert_string_to_date(date)
+                date = convert_string_to_date(date) 
             except Exception as error_message:
                 raise ValueError(f"Date is not in valid date format mm/dd/yyyy\n{error_message}")
             
@@ -96,7 +96,7 @@ class UploadScene():
             entries.append(Entry(date, type, category, description, amount, location)) 
 
         return entries
-    
+
     def show_entries_scene(self):
         self.hide()
         self.app.show_entries_scene()
