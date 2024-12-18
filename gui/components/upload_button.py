@@ -3,6 +3,7 @@ from tkinter import filedialog, messagebox
 import csv
 import os
 from datetime import datetime
+from managers.database import DuplicateEntryError
 from managers.entry import Entry, EntryType
 
 class UploadButton:
@@ -29,10 +30,17 @@ class UploadButton:
             entries, invalid_rows = self.convert_row_to_entry(rows)
 
             if invalid_rows:
-                raise ValueError(f"Invalid rows were found and ignored: {invalid_rows}")
+                raise ValueError(f"{len(invalid_rows)} invalid rows were found and ignored")
 
+            duplicate_rows = []
             for entry in entries:
-                self.database.add_entry(entry)
+                try:
+                    self.database.add_entry(entry)
+                except DuplicateEntryError as error_message:
+                    duplicate_rows.append(error_message)
+
+            if len(duplicate_rows) > 0:
+                raise ValueError(f"{len(duplicate_rows)} duplicate rows were found and ignored")
 
             self.update_filter_options()
             self.update_tree()

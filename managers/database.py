@@ -1,7 +1,13 @@
 from datetime import datetime
+from enum import Enum
 import json
 import sqlite3
 from managers.entry import Entry
+
+class DuplicateEntryError(Exception):
+    def __init__(self, message="Duplicate entry found."):
+        self.message = message
+        super().__init__(self.message)
 
 class Database:
     def __init__(self):
@@ -39,7 +45,17 @@ class Database:
         """)
         self.connection.commit()
 
+# database.py
+
     def add_entry(self, entry):
+        # Check for duplicate
+        self.cursor.execute("""
+            SELECT 1 FROM entries WHERE date=? AND type=? AND category=? AND description=? AND amount=? AND location=?
+        """, (entry.date, entry.type.value, entry.category, entry.description, entry.amount, entry.location))
+        
+        if self.cursor.fetchone():  # Duplicate found
+            raise DuplicateEntryError(f"Duplicate entry: {entry}")
+        
         self.cursor.execute("""
             INSERT INTO entries (date, type, category, description, amount, location)
             VALUES (?, ?, ?, ?, ?, ?)
