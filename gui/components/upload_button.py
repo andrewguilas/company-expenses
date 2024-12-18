@@ -3,6 +3,7 @@ from tkinter import filedialog, messagebox
 import csv
 import os
 from datetime import datetime
+from gui.components import csv_parser
 from managers.database import DuplicateEntryError
 from managers.entry import Entry, EntryType
 
@@ -23,11 +24,17 @@ class UploadButton:
         file = filedialog.askopenfile(mode='r', initialdir=os.getcwd(), filetypes=[("CSV Files", "*.csv")])
 
         if file is None:
+            self.upload_button.config(state="normal")
             return  # User canceled the dialog
 
         try:
             rows = self.get_data_from_csv(file)
-            entries, invalid_rows = self.convert_row_to_entry(rows)
+
+            entries, invalid_rows = [], []
+            if "2019" in file.name:
+                entries, invalid_rows = csv_parser.convert_row_to_entry_2019(rows)
+            elif "2023" in file.name:
+                entries, invalid_rows = csv_parser.convert_row_to_entry_2023(rows)
 
             if invalid_rows:
                 raise ValueError(f"{len(invalid_rows)} invalid rows were found and ignored")
@@ -47,56 +54,15 @@ class UploadButton:
         except Exception as error_message:
             messagebox.showerror("Error", f"Failed to process CSV file:\n{error_message}")
         finally:
+            print("done")
             file.close()
             self.upload_button.config(state="normal")
+            print("done2")
 
     def get_data_from_csv(self, file):
         reader = csv.reader(file)
         data = list(reader)
-        if not data or len(data[0]) < 5:
+        if not data:
             raise ValueError("The selected file is missing required columns.")
 
         return data[1:]  # Remove heading row
-
-    def convert_row_to_entry(self, rows):
-        entries = []
-        invalid_rows = []
-        for row_idx, row in enumerate(rows, start=2):  # Start at row 2 to indicate the actual row number
-            try:
-                missing_data = self.check_for_missing_data(row)
-                if missing_data:
-                    raise ValueError(f"Missing data in row {row_idx}: {missing_data}")
-
-                date = self.convert_string_to_date(row[0])
-                amount = self.convert_string_to_amount(row[3])
-                entry_type = EntryType.EXPENSE if amount < 0 else EntryType.REVENUE
-                entries.append(Entry(date, entry_type, row[1].upper(), row[2].upper(), amount, row[4].upper()))
-            except Exception as error_message:
-                invalid_rows.append(f"Row {row_idx}: {error_message}")
-                continue
-
-        return entries, invalid_rows
-
-    def convert_string_to_date(self, date_string):
-        try:
-            return datetime.strptime(date_string, "%m/%d/%Y").date()
-        except ValueError:
-            raise ValueError(f"Invalid date format: {date_string}. Expected MM/DD/YYYY.")
-
-    def convert_string_to_amount(self, amount_string):
-        try:
-            cleaned_string = amount_string.replace(",", "")
-            if "(" in cleaned_string and ")" in cleaned_string:  # () in account form means negative
-                amount = float(cleaned_string.replace("(", "-").replace(")", "").replace("$", ""))
-            else:
-                amount = float(cleaned_string.replace("$", ""))
-            return amount
-        except ValueError:
-            raise ValueError(f"Invalid amount format: {amount_string}. Expected numeric or formatted amount.")
-
-    def check_for_missing_data(self, data):
-        missing_indices = []
-        for idx, value in enumerate(data):
-            if idx <= 4 and not value.strip():
-                missing_indices.append(idx)
-        return missing_indices
