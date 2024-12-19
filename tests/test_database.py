@@ -4,6 +4,8 @@ import unittest
 from managers.database import Database, DuplicateEntryError
 from managers.entry import Entry, EntryType
 
+# python -m unittest discover
+
 class TestDatabase(unittest.TestCase):
     def setUp(self):
         self.database = Database(db_filename=":memory:")
