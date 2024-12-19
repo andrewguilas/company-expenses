@@ -16,3 +16,7 @@ class Entry:
 
     def __str__(self):
         return f"{self.date.strftime('%m/%d/%Y')} {self.type} {self.category} {self.description} {self.amount} {self.location}"
+
+    def __repr__(self):
+        return f"Entry(id={self.id}, date={self.date}, type={self.type}, category={self.category}, description={self.description}, amount={self.amount}, location={self.location})"
+
