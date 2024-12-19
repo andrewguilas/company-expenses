@@ -70,7 +70,7 @@ class Database:
             else:
                 self.cursor.execute("SELECT * FROM entries")
             rows = self.cursor.fetchall()
-        return [Entry(datetime.strptime(row[1], "%Y-%m-%d").date(), row[2], row[3], row[4], row[5], row[6]) for row in rows]
+        return [Entry(datetime.strptime(row[1], "%Y-%m-%d").date(), row[2], row[3], row[4], row[5], row[6], row[0]) for row in rows]
 
     def get_expenses(self):
         return self.get_entries('EXPENSE')

@@ -5,8 +5,8 @@ class EntryType(Enum):
     REVENUE = "REVENUE"
 
 class Entry:
-    def __init__(self, date, type, category, description, amount, location):
-        self.id = None
+    def __init__(self, date, type, category, description, amount, location, id=None):
+        self.id = id
         self.date = date
         self.type = type
         self.category = category

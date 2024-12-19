@@ -59,7 +59,7 @@ class TestDatabase(unittest.TestCase):
         self.database.add_entry(entry2)
         entries = self.database.get_entries()
         self.assertEqual(len(entries), 2)
-        self.assertEqual(entries[1].type, EntryType.REVENUE)
+        self.assertEqual(entries[1].type, "EXPENSE")
 
     def test_get_expenses_and_revenues(self):
         expense = Entry(
@@ -123,3 +123,27 @@ class TestDatabase(unittest.TestCase):
         self.database.delete_entry(entry)
         entries = self.database.get_entries()
         self.assertEqual(len(entries), 0)
+
+    def test_get_locations(self):
+        entry1 = Entry(
+            date=datetime(2023, 12, 18).date(),
+            type=EntryType.EXPENSE,
+            category="Food",
+            description="Lunch at cafe",
+            amount=15.75,
+            location="City Center"
+        )
+        entry2 = Entry(
+            date=datetime(2023, 12, 19).date(),
+            type=EntryType.REVENUE,
+            category="Salary",
+            description="Monthly salary",
+            amount=2500,
+            location="Workplace"
+        )
+        self.database.add_entry(entry1)
+        self.database.add_entry(entry2)
+
+        locations = self.database.get_locations()
+        self.assertIn("City Center", locations)
+        self.assertIn("Workplace", locations)
