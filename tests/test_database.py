@@ -60,3 +60,31 @@ class TestDatabase(unittest.TestCase):
         entries = self.database.get_entries()
         self.assertEqual(len(entries), 2)
         self.assertEqual(entries[1].type, EntryType.REVENUE)
+
+    def test_get_expenses_and_revenues(self):
+        expense = Entry(
+            date=datetime(2023, 12, 18).date(),
+            type=EntryType.EXPENSE,
+            category="Food",
+            description="Lunch at cafe",
+            amount=15.75,
+            location="City Center"
+        )
+        revenue = Entry(
+            date=datetime(2023, 12, 19).date(),
+            type=EntryType.REVENUE,
+            category="Salary",
+            description="Monthly salary",
+            amount=2500,
+            location="Workplace"
+        )
+        self.database.add_entry(expense)
+        self.database.add_entry(revenue)
+
+        expenses = self.database.get_expenses()
+        revenues = self.database.get_revenues()
+
+        self.assertEqual(len(expenses), 1)
+        self.assertEqual(expenses[0].category, "Food")
+        self.assertEqual(len(revenues), 1)
+        self.assertEqual(revenues[0].category, "Salary")
