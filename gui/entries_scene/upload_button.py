@@ -31,10 +31,10 @@ class UploadButton:
             rows = self.get_data_from_csv(file)
 
             entries, invalid_rows = [], []
-            if "2019" in file.name:
-                entries, invalid_rows = csv_parser.convert_row_to_entry_2019(rows)
-            elif "2023" in file.name:
-                entries, invalid_rows = csv_parser.convert_row_to_entry_2023(rows)
+            if "Old" in file.name:
+                entries, invalid_rows = csv_parser.convert_row_to_entry_old(rows)
+            elif "New" in file.name:
+                entries, invalid_rows = csv_parser.convert_row_to_entry_new(rows)
 
             if invalid_rows:
                 raise ValueError(f"{len(invalid_rows)} invalid rows were found and ignored")
@@ -54,10 +54,8 @@ class UploadButton:
         except Exception as error_message:
             messagebox.showerror("Error", f"Failed to process CSV file:\n{error_message}")
         finally:
-            print("done")
             file.close()
             self.upload_button.config(state="normal")
-            print("done2")
 
     def get_data_from_csv(self, file):
         reader = csv.reader(file)

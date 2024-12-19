@@ -1,7 +1,7 @@
 from datetime import datetime
 from managers.entry import Entry, EntryType
 
-def convert_row_to_entry_2019(rows):
+def convert_row_to_entry_old(rows):
     entries = []
     invalid_rows = []
     for row_idx, row in enumerate(rows, start=2):  # Start at row 2 to indicate the actual row number
@@ -24,7 +24,7 @@ def convert_row_to_entry_2019(rows):
 
     return entries, invalid_rows
 
-def convert_row_to_entry_2023(rows):
+def convert_row_to_entry_new(rows):
     entries = []
     invalid_rows = []
     for row_idx, row in enumerate(rows, start=2):  # Start at row 2 to indicate the actual row number

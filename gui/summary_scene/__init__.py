@@ -6,7 +6,7 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta  # Added for month handling
 from managers.database import Database
 
-MIN_DATE = "2022_1"
+MIN_DATE = "2023_1"
 MAX_DATE = "2023_12"
 
 class SummaryScene:
@@ -76,7 +76,7 @@ class SummaryScene:
             if entry.category not in stats[entry.location]:
                 stats[entry.location][entry.category] = {}
 
-            for year in [2022, 2023]:
+            for year in [2023]:
                 for month in range(1, 13):
                     date_string = f"{year}_{month:02d}" 
                     if date_string not in stats[entry.location][entry.category]:
