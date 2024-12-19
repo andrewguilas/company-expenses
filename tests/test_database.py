@@ -176,3 +176,15 @@ class TestDatabase(unittest.TestCase):
         entries = self.database.get_entries()
         self.assertEqual(len(entries), 0)
 
+    def test_sql_injection_protection(self):
+        entry = Entry(
+            date=datetime(2023, 12, 18).date(),
+            type=EntryType.EXPENSE,
+            category="Food",
+            description="'); DROP TABLE entries; --",
+            amount=15.75,
+            location="City Center"
+        )
+        self.database.add_entry(entry)
+        entries = self.database.get_entries()
+        self.assertEqual(len(entries), 1)
