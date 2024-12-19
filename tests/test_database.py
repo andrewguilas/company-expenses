@@ -88,3 +88,24 @@ class TestDatabase(unittest.TestCase):
         self.assertEqual(expenses[0].category, "Food")
         self.assertEqual(len(revenues), 1)
         self.assertEqual(revenues[0].category, "Salary")
+
+    def test_update_entry(self):
+        entry = Entry(
+            date=datetime(2023, 12, 18).date(),
+            type=EntryType.EXPENSE,
+            category="Food",
+            description="Lunch at cafe",
+            amount=15.75,
+            location="City Center"
+        )
+        self.database.add_entry(entry)
+        entry_id = entry.id
+
+        entry.description = "Dinner at cafe"
+        entry.amount = 25.50
+        self.database.update_entry(entry)
+
+        updated_entry = self.database.get_entries()[0]
+        self.assertEqual(updated_entry.id, entry_id)
+        self.assertEqual(updated_entry.description, "Dinner at cafe")
+        self.assertEqual(updated_entry.amount, 25.50)
