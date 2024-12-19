@@ -10,8 +10,8 @@ class DuplicateEntryError(Exception):
         super().__init__(self.message)
 
 class Database:
-    def __init__(self):
-        self.db_filename = self.load_config()\
+    def __init__(self, db_filename=None):
+        self.db_filename = db_filename or self.load_config()
 
         try:
             self.connection = sqlite3.connect(self.db_filename)
@@ -29,6 +29,9 @@ class Database:
                 return config.get("db_filename", "database.db")
         except FileNotFoundError:
             print("Config file not found, using default settings.")
+            return "database.db"
+        except json.JSONDecodeError:
+            print("Invalid config file format, using default settings.")
             return "database.db"
 
     def create_tables(self):
@@ -67,7 +70,7 @@ class Database:
             else:
                 self.cursor.execute("SELECT * FROM entries")
             rows = self.cursor.fetchall()
-        return [Entry(datetime.strptime(row[1], "%Y-%m-%d").date(), row[2], row[3], row[4], row[5], row[6]) for row in rows]
+        return [Entry(datetime.strptime(row[1], "%Y-%m-%d").date(), row[2], row[3], row[4], row[5], row[6], row[0]) for row in rows]
 
     def get_expenses(self):
         return self.get_entries('EXPENSE')
@@ -104,5 +107,10 @@ class Database:
         return [row[0] for row in rows]
 
     def close(self):
-        self.cursor.close()
-        self.connection.close()
+        try:
+            if self.cursor:
+                self.cursor.close()
+            if self.connection:
+                self.connection.close()
+        except sqlite3.Error as e:
+            print(f"Error while closing database: {e}")
