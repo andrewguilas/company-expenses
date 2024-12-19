@@ -3,7 +3,7 @@ from tkinter import filedialog, messagebox
 import csv
 import os
 from datetime import datetime
-from gui.components import csv_parser
+from . import csv_parser
 from managers.database import DuplicateEntryError
 from managers.entry import Entry, EntryType
 
