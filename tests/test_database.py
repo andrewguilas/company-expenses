@@ -147,3 +147,27 @@ class TestDatabase(unittest.TestCase):
         locations = self.database.get_locations()
         self.assertIn("City Center", locations)
         self.assertIn("Workplace", locations)
+
+    def test_get_categories(self):
+        entry1 = Entry(
+            date=datetime(2023, 12, 18).date(),
+            type=EntryType.EXPENSE,
+            category="Food",
+            description="Lunch at cafe",
+            amount=15.75,
+            location="City Center"
+        )
+        entry2 = Entry(
+            date=datetime(2023, 12, 19).date(),
+            type=EntryType.REVENUE,
+            category="Salary",
+            description="Monthly salary",
+            amount=2500,
+            location="Workplace"
+        )
+        self.database.add_entry(entry1)
+        self.database.add_entry(entry2)
+
+        categories = self.database.get_categories()
+        self.assertIn("Food", categories)
+        self.assertIn("Salary", categories)
