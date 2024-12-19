@@ -96,7 +96,12 @@ class SummaryScene:
                 }
 
             stats[entry.location][entry.category][date_string]["COUNT"] += 1
-            stats[entry.location][entry.category][date_string]["AMOUNT"] += entry.amount
+            stats[entry.location][entry.category][date_string]["AMOUNT"] += abs(entry.amount)
+
+        selected_category = self.category_dropdown.get()
+        if selected_category:
+            for location in stats.keys():
+                print(f"{location} {selected_category}: " + str([round(value["AMOUNT"]) for key, value in stats[location][selected_category].items()]))
 
         return stats
 
@@ -111,6 +116,16 @@ class SummaryScene:
         # Collect all locations to determine the number of histograms
         locations = [location for location in stats]
         num_locations = len(locations)
+
+        # Find the global Y-axis range
+        global_min = 0
+        global_max = 0
+
+        for location in stats:
+            for category, data in stats[location].items():
+                if category == selected_category:
+                    for month_year, values in data.items():
+                        global_max = max(global_max, abs(values["AMOUNT"]))
 
         # Dynamic figure height adjustment
         total_canvas_height = 600  # Total height available for all histograms
@@ -128,6 +143,9 @@ class SummaryScene:
             for category, data in stats[location].items():
                 if category == selected_category:
                     self.display_histogram(ax, category, data, location)
+
+            # Set consistent Y-axis limits
+            ax.set_ylim(global_min, global_max)
 
         # Add a unified X-axis on the bottom-most subplot
         self.add_shared_xaxis(axes[-1])
@@ -180,6 +198,10 @@ class SummaryScene:
         ax.spines['bottom'].set_color('gray')
         ax.grid(axis='y', linestyle='--', alpha=0.7)
         ax.set_axisbelow(True)
+
+        selected_category = self.category_dropdown.get()
+        # print(f"{location} {selected_category}: " + str([round(amount) for amount in amounts]))
+
 
     def add_shared_xaxis(self, ax):
         MIN_DATE = "2022_1"
