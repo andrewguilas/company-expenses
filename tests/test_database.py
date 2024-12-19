@@ -109,3 +109,17 @@ class TestDatabase(unittest.TestCase):
         self.assertEqual(updated_entry.id, entry_id)
         self.assertEqual(updated_entry.description, "Dinner at cafe")
         self.assertEqual(updated_entry.amount, 25.50)
+
+    def test_delete_entry(self):
+        entry = Entry(
+            date=datetime(2023, 12, 18).date(),
+            type=EntryType.EXPENSE,
+            category="Food",
+            description="Lunch at cafe",
+            amount=15.75,
+            location="City Center"
+        )
+        self.database.add_entry(entry)
+        self.database.delete_entry(entry)
+        entries = self.database.get_entries()
+        self.assertEqual(len(entries), 0)
