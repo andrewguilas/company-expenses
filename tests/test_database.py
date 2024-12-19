@@ -171,3 +171,8 @@ class TestDatabase(unittest.TestCase):
         categories = self.database.get_categories()
         self.assertIn("Food", categories)
         self.assertIn("Salary", categories)
+
+    def test_no_entries(self):
+        entries = self.database.get_entries()
+        self.assertEqual(len(entries), 0)
+
